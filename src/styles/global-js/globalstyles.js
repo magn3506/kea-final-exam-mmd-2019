@@ -9,6 +9,7 @@ export const GlobalStyle = createGlobalStyle`
  
  h1,h2,h3,h4{
         font-family: 'Merriweather', serif;
+        font-weight: 400;
     }
 
     p{
