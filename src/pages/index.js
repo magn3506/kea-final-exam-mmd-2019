@@ -2,7 +2,7 @@ import React from "react"
 
 import styled from "styled-components"
 import { colors } from "../styles/global-js/colors"
-import "../styles/global-css/nomalize/normalize.scss"
+import "../styles/global-css/base.scss"
 import Button from "../components/atoms/button/button"
 
 const StyleCompTest = styled.h1`
