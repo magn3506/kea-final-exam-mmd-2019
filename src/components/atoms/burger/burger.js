@@ -10,6 +10,15 @@ export class burger extends Component {
       display: flex;
       justify-content: space-evenly;
       flex-direction: column;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.8;
+      }
+
+      @media (min-width: 1000px) {
+        display: none;
+      }
     `
     const BurgerLine = styled.div`
       background-color: ${colors.grey};
