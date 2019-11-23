@@ -5,13 +5,19 @@ import { device } from "../../../styles/global-js/breakpoints"
 
 const Wrapper = styled.div`
   width: 100px;
+  margin-left: 5px;
+  margin-right: 5px;
 
   @media ${device.tablet} {
     width: 175px;
+    margin-left: 5px;
+    margin-right: 5px;
   }
 
   @media ${device.laptop} {
     width: 225px;
+    margin-left: 10px;
+    margin-right: 10px;
   }
 `
 
