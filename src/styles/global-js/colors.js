@@ -6,4 +6,5 @@ export const colors = {
   tan: "#bd8360",
   green: "#00ff00",
   darkGrey: "#2C2F2A",
+  gold: "#8A6551",
 }
