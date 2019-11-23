@@ -18,7 +18,7 @@ export class bLinkCon extends Component {
         color: ${colors.white};
         text-transform: capitalize;
         font-size: 14px;
-        margin: 10px 0px;
+        margin: 15px 0px;
         margin-left: 25px;
       }
 

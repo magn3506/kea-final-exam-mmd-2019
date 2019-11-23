@@ -13,6 +13,8 @@ const navBottom = props => {
     height: 100vh;
     background-color: rgba(35, 37, 33, 0.9);
     position: fixed;
+    top: 0;
+    left: 0;
     box-sizing: border-box;
   `
 
@@ -97,7 +99,10 @@ const navBottom = props => {
             </GlinkWrap>
           </NavLinksCon>
         </NavLinkContainer>
-        <NavSiteSwitch siteType={props.siteType}></NavSiteSwitch>
+        <NavSiteSwitch
+          siteType={props.siteType}
+          onClick={props.handleSiteChange}
+        ></NavSiteSwitch>
       </NavContainer>
     </NavWrapper>
   )

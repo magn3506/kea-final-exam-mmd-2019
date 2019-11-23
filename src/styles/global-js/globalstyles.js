@@ -4,8 +4,14 @@ export const GlobalStyle = createGlobalStyle`
 
  body{
     font-family: 'Merriweather', serif;
+    margin: 0;
+    padding: 0;
 
  }   
+
+ * {
+     box-sizing: border-box;
+ }
  
  h1,h2,h3,h4{
         font-family: 'Merriweather', serif;
