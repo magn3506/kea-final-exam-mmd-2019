@@ -6,4 +6,4 @@ export default {
   title: "Components|Molecules/Nav-Bottom",
 }
 
-export const Primeary = () => <NavBottom></NavBottom>
+export const Primeary = () => <NavBottom siteType={true}></NavBottom>

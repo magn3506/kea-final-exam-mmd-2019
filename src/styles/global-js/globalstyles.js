@@ -19,4 +19,18 @@ export const GlobalStyle = createGlobalStyle`
         font-family: 'Roboto Slab', serif;
 
     }
+
+    ul {
+       
+    }
+
+
+
+    li {
+        list-style: none;
+        color: red;
+       
+    }
+
+
 `
