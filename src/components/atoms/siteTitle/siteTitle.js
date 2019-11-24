@@ -1,5 +1,5 @@
-import React, { Component } from "react"
-import styled, { css } from "styled-components"
+import React from "react"
+import styled from "styled-components"
 import { colors } from "../../../styles/global-js/colors"
 import DiamondIcon from "../../../../static/icons/diamond.svg"
 import YearIcon from "../../../../static/icons/year.svg"
@@ -50,14 +50,14 @@ const siteTitle = props => {
     <SiteTtileWrapper>
       <SiteTitle>
         <YearCon>
-          <img src={YearIcon} alt='year icon'></img>
+          <img src={YearIcon} alt="year icon"></img>
         </YearCon>
         <DiamondCon>
-          <img src={DiamondIcon} alt='diamond icon' />
+          <img src={DiamondIcon} alt="diamond icon" />
         </DiamondCon>
         <H1>{props.titleName ? props.titleName : "Page Title"}</H1>
         <DiamondCon>
-          <img src={DiamondIcon} alt='Diamond icon' />
+          <img src={DiamondIcon} alt="Diamond icon" />
         </DiamondCon>
       </SiteTitle>
     </SiteTtileWrapper>

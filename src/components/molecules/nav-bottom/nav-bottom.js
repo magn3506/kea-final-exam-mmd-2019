@@ -1,8 +1,7 @@
-import React, { Component } from "react"
+import React from "react"
 import styled, { css } from "styled-components"
 import { colors } from "../../../styles/global-js/colors"
 import SiteTitle from "../../atoms/siteTitle/siteTitle"
-import { Link } from "gatsby"
 import ButLinkCon from "./butLinkCon"
 import BarLinkCon from "./barLinkCon"
 import NavSiteSwitch from "./navSwitch"
@@ -14,8 +13,22 @@ const navBottom = props => {
     background-color: rgba(35, 37, 33, 0.9);
     position: fixed;
     top: 0;
-    left: 0;
+    right: 0vw;
     box-sizing: border-box;
+    display: ${props => (props.open ? "block" : "none")};
+
+    /* animation: ${props => props.open && "in"} .5s forwards;
+
+    @keyframes in {
+      from {
+        right: 100vw
+      }
+      to {
+        right: 0vw;
+      }
+    } */
+   
+
   `
 
   const NavContainer = styled.div`
@@ -70,14 +83,27 @@ const navBottom = props => {
     }
   `
 
+  const CloneBtn = styled.button`
+    color: ${colors.tan};
+    font-size: 20px;
+    cursor: pointer;
+    position: relative;
+    right: -68vw;
+    top: -55px;
+    &:hover {
+      opacity: 0.9;
+    }
+  `
+
   return (
-    <NavWrapper>
+    <NavWrapper open={props.open}>
       <NavContainer>
         <NavLinkContainer>
           <NavHeader>
             <SiteTitle
               titleName={props.siteType ? "Butique" : "Bar"}
             ></SiteTitle>
+            <CloneBtn onClick={props.handleNavOpen}>X</CloneBtn>
           </NavHeader>
           <NavLinksCon>
             {props.siteType ? <ButLinkCon /> : <BarLinkCon />}
@@ -86,13 +112,13 @@ const navBottom = props => {
               <GLinkCon>
                 <ul>
                   <GLink>
-                    <Link>About</Link>
+                    <a>About</a>
                   </GLink>
                   <GLink>
-                    <Link>Contact</Link>
+                    <a>Contact</a>
                   </GLink>
                   <GLink>
-                    <Link>Return & Shipping</Link>
+                    <a>Return & Shipping</a>
                   </GLink>
                 </ul>
               </GLinkCon>
@@ -101,7 +127,7 @@ const navBottom = props => {
         </NavLinkContainer>
         <NavSiteSwitch
           siteType={props.siteType}
-          onClick={props.handleSiteChange}
+          handleSiteChange={props.handleSiteChange}
         ></NavSiteSwitch>
       </NavContainer>
     </NavWrapper>

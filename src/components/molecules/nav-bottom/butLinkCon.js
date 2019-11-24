@@ -1,7 +1,6 @@
 import React, { Component } from "react"
-import styled, { css } from "styled-components"
+import styled from "styled-components"
 import { colors } from "../../../styles/global-js/colors"
-import { Link } from "gatsby"
 
 export class bLinkCon extends Component {
   render() {
@@ -62,36 +61,36 @@ export class bLinkCon extends Component {
       <BLinkCon>
         <ul>
           <Blink>
-            <Link>hats</Link>
+            <a to="/">hats</a>
           </Blink>
           <Blink>
-            <Link>Boots</Link>
+            <a to="/">Boots</a>
             <BSubLinkCon>
               <BSubLink>
-                <Link>The Lad</Link>
+                <a to="/">The Lad</a>
               </BSubLink>
               <BSubLink>
-                <Link>The Lady</Link>
+                <a to="/">The Lady</a>
               </BSubLink>
             </BSubLinkCon>
           </Blink>
 
           <Blink>
-            <Link>Clothing</Link>
+            <a to="/">Clothing</a>
           </Blink>
           <Blink>
-            <Link>Accesories *</Link>
+            <a to="/">Accesories *</a>
             <BSubLinkCon>
               <BSubLink>
-                <Link>The Lad</Link>
+                <a to="/">The Lad</a>
               </BSubLink>
               <BSubLink>
-                <Link>The Lady</Link>
+                <a to="/">The Lady</a>
               </BSubLink>
             </BSubLinkCon>
           </Blink>
           <Blink>
-            <Link>Sale</Link>
+            <a to="/">Sale</a>
           </Blink>
         </ul>
       </BLinkCon>

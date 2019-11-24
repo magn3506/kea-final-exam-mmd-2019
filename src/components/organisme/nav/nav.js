@@ -5,22 +5,33 @@ import NavBottom from "../../molecules/nav-bottom/nav-bottom"
 export class nav extends Component {
   state = {
     siteType: true,
+    open: false,
   }
 
   handleSiteChange = () => {
     this.setState({
       siteType: !this.state.siteType,
     })
-    console.log("Hello")
+  }
+
+  handleNavOpen = () => {
+    this.setState({
+      open: !this.state.open,
+    })
   }
 
   render() {
     return (
       <nav>
-        <NavTop></NavTop>
+        <NavTop
+          handleNavOpen={this.handleNavOpen}
+          siteType={this.state.siteType}
+        ></NavTop>
         <NavBottom
           siteType={this.state.siteType}
           handleSiteChange={this.handleSiteChange}
+          open={this.state.open}
+          handleNavOpen={this.handleNavOpen}
         ></NavBottom>
       </nav>
     )
