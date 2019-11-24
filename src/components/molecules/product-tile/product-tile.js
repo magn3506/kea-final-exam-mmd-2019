@@ -25,12 +25,12 @@ const InfoBox = styled.div`
   background: white;
 `
 const ImgBox = styled.img`
-width: 100%;
+  width: 100%;
 `
 
 const ProductTitle = styled.h4`
-font-size: 0.8rem;
-margin-top: 0;
+  font-size: 0.8rem;
+  margin-top: 0;
 
   @media ${device.tablet} {
     font-size: 1rem;
