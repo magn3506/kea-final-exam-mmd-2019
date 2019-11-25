@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 
 import { colors } from "../../../styles/global-js/colors"
+import { device } from "../../../styles/global-js/breakpoints"
 
 const Wrapper = styled.div`
 `
@@ -15,6 +16,14 @@ const HourBox = styled.div`
 display: flex;
 justify-content: space-between;
 flex-direction: row;
+
+@media ${device.tablet} {
+    width: 85%;
+  }
+
+  @media ${device.laptop} {
+    width: 50%;
+  }
 `
 
 const ListLeft = styled.ul`

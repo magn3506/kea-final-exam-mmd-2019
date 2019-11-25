@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 
 import { colors } from "../../../styles/global-js/colors"
+import { Link } from "gatsby"
 
 const Wrapper = styled.div`
 `
@@ -15,10 +16,17 @@ list-style: none;
 padding: 0;
 `
 
-const Links = styled.li`
-color: white;
+const ListItem = styled.li`
 font-size: 12px;
 margin-bottom: 5px;
+`
+const Links = styled(Link)`
+color: white;
+text-decoration: none;
+
+&:hover {
+    opacity: .8;
+}
 `
 
 const Information = () => {
@@ -26,9 +34,9 @@ const Information = () => {
     <Wrapper>
       <Title>Information</Title>
       <List>
-        <Links>About</Links>
-        <Links>Contact</Links>
-        <Links>Shipping and Returns</Links>
+        <ListItem><Links to="/">About</Links></ListItem>
+        <ListItem><Links to="/">Contact</Links></ListItem>
+        <ListItem><Links to="/">Shipping and Returns</Links></ListItem>
       </List>
     </Wrapper>
   )
