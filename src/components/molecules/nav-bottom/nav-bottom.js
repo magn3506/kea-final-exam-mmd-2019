@@ -3,6 +3,8 @@ import styled, { css } from "styled-components"
 import { colors } from "../../../styles/global-js/colors"
 import { device, size } from "../../../styles/global-js/breakpoints"
 import ButiqueSmallLabel from "../../../../static/icons/small_label_butique.svg"
+import SiteTitle from "../../atoms/siteTitle/siteTitle"
+import CloseIcon from "../../atoms/icons/closeIcon/close-icon"
 
 export class navBottom extends Component {
   render() {
@@ -11,37 +13,55 @@ export class navBottom extends Component {
       height: 100vh;
       background: rgba(35, 37, 33, 0.9);
       position: fixed;
-      /* top: 0; */
+      top: 0;
 
       @media ${device.laptop} {
         position: static;
-        height: auto;
+        min-height: 40px;
+        height: 40px;
         background: ${colors.greenGrade};
+        box-shadow: ${colors.NavBoxShadow};
       }
     `
     const NavContainer = styled.div`
       width: 75vw;
       height: 100vh;
+      overflow: scroll;
       background-color: ${colors.darkGrey};
       display: flex;
       flex-direction: column;
+      box-shadow: ${colors.NavBoxShadow};
       @media ${device.laptop} {
         height: 100%;
         width: 1000px;
         margin: auto;
         flex-direction: row;
         background-color: transparent;
+        box-shadow: none;
       }
     `
-
     const NavHeader = styled.div`
       width: 100%;
       background: ${colors.darkGrade};
-      height: 150px;
+      padding: 20px;
       color: white;
+
+      div {
+        margin: 0 auto;
+      }
 
       @media ${device.laptop} {
         display: none;
+      }
+    `
+    const CloseIconContainer = styled.div`
+      width: 100%;
+      position: relative;
+      svg {
+        position: absolute;
+        width: 15px;
+        right: -10px;
+        top: -10px;
       }
     `
 
@@ -59,18 +79,20 @@ export class navBottom extends Component {
     const Li = styled.li`
       background: ${colors.greenGrade};
       display: flex;
+      height: 100%;
       a {
         color: white;
         text-transform: capitalize;
-        padding: 10px;
+        padding: 15px 20px;
         @media ${device.laptop} {
+          padding: 10px 20px 10px 10px;
         }
       }
     `
 
     const LinkDevider = styled.div`
       width: 100%;
-      height: 5px;
+      min-height: 5px;
       background: ${colors.tan};
       @media ${device.laptop} {
         display: none;
@@ -91,24 +113,27 @@ export class navBottom extends Component {
       }
     `
     const G_LI = styled.li`
-      /* FIX COLROS ! */
       display: flex;
 
       a {
-        background-color: black;
         color: white;
         text-transform: capitalize;
-        background: black;
+        background: ${colors.dark};
         width: 100%;
-        padding: 10px;
+        padding: 15px 20px;
+        margin-bottom: 2px;
+        @media ${device.laptop} {
+          padding: 10px 20px 10px 20px;
+          margin-bottom: 0px;
+        }
       }
     `
 
     const SwitchContainer = styled.div`
       background: ${colors.redGrade};
-      height: 250px;
       width: 100%;
       display: flex;
+      height: 100px;
 
       @media ${device.laptop} {
         height: auto;
@@ -117,7 +142,8 @@ export class navBottom extends Component {
     `
     const SwitchIcon = styled.div`
       width: 100px;
-      margin: 0 auto;
+      margin: 0px auto;
+
       @media ${device.laptop} {
         width: 50px;
       }
@@ -133,7 +159,12 @@ export class navBottom extends Component {
     return (
       <NavWrapper>
         <NavContainer>
-          <NavHeader>Butique</NavHeader>
+          <NavHeader>
+            <CloseIconContainer>
+              <CloseIcon></CloseIcon>
+            </CloseIconContainer>
+            <SiteTitle titleName="Butique"></SiteTitle>
+          </NavHeader>
           <LinkContainer>
             <Li>
               <a href="">link 1</a>
