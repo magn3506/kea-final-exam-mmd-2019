@@ -4,7 +4,7 @@ export const colors = {
   redGrade: "linear-gradient(180deg, #4A2B25 0%, #422621 100%)",
   grey: "#B0B0B0",
   tan: "#bd8360",
-  green: "#00ff00",
+  green: "#3B4436",
   darkGrey: "#2C2F2A",
   gold: "#8A6551",
 }
