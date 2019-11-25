@@ -11,8 +11,8 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "storybook": "env-cmd -f .env.storybook start-storybook -s public",
-    "build-storybook": "env-cmd -f .env.storybook build-storybook -s public"
+    "storybook": "env-cmd -f .env start-storybook -s public",
+    "build-storybook": "env-cmd -f .env build-storybook -s public"
   },
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.6",
