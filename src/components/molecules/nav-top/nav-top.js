@@ -5,11 +5,10 @@ import Burger from "../../atoms/burger/burger"
 import SiteTitle from "../../atoms/siteTitle/siteTitle"
 import CartIcon from "../../../../static/icons/cart.svg"
 import Logo from "../../../../static/logo_wide.svg"
-
+import { device, size } from "../../../styles/global-js/breakpoints"
 export class navTop extends Component {
   render() {
     const TopBar = styled.div`
-      background: ${colors.darkGrade};
       height: 35px;
       color: white;
       padding: 5px 10px;
@@ -17,16 +16,24 @@ export class navTop extends Component {
       box-sizing: border-box;
       display: flex;
       justify-content: space-between;
-      @media (min-width: 1000px) {
+      max-width: 1000px;
+      margin: 0 auto;
+      @media ${device.laptop} {
         height: 60px;
       }
     `
 
-    const Wrapper = styled.div``
+    const Wrapper = styled.div`
+      width: 100vw;
+      background: ${colors.darkGrade};
+    `
 
     const BottomLine = styled.div`
       height: 5px;
       background: ${colors.greenGrade};
+      @media ${device.laptop} {
+        display: none;
+      }
     `
     const CartIconCon = styled.div`
       width: 20px;
@@ -60,11 +67,11 @@ export class navTop extends Component {
         <TopBar>
           <Burger></Burger>
           <LogoIconCon>
-            <img src={Logo} alt='logo'></img>
+            <img src={Logo} alt="logo"></img>
           </LogoIconCon>
-          <SiteTitle titleName='Butique'></SiteTitle>
+          <SiteTitle titleName="Butique"></SiteTitle>
           <CartIconCon>
-            <img src={CartIcon} alt='cart' />
+            <img src={CartIcon} alt="cart" />
           </CartIconCon>
         </TopBar>
         <BottomLine></BottomLine>

@@ -4,8 +4,13 @@ export const GlobalStyle = createGlobalStyle`
 
  body{
     font-family: 'Merriweather', serif;
-
+    padding: 0;
+    margin: 0;
  }   
+
+ * {
+     box-sizing: border-box;
+ }
  
  h1,h2,h3,h4{
         font-family: 'Merriweather', serif;
@@ -18,5 +23,15 @@ export const GlobalStyle = createGlobalStyle`
     button, a{
         font-family: 'Roboto Slab', serif;
 
+    }
+
+    a{
+        text-decoration: none;
+        
+
+    }
+    li{
+        list-style: none;
+      
     }
 `
