@@ -1,12 +1,10 @@
 import React from "react"
-import Layout from "../components/layout/layout"
-
+import Nav from "../components/organisme/nav/nav"
 const indexPage = () => {
   return (
     <div>
-      <Layout>
-        <h1>INDEX PAGE</h1>
-      </Layout>
+      <Nav></Nav>
+      <h1>hello</h1>
     </div>
   )
 }

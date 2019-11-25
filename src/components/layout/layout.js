@@ -1,11 +1,14 @@
 import React from "react"
 import Nav from "../organisme/nav/nav"
-import { GlobalStyle } from "../../../src/styles/global-js/globalstyles"
+// import { GlobalStyle } from "../../../src/styles/global-js/globalstyles"
 
-export default ({ children }) => (
-  <div>
-    <GlobalStyle></GlobalStyle>
-    <Nav></Nav>
-    {children}
-  </div>
-)
+const Layout = props => {
+  return (
+    <div>
+      <h1>HELLOO 222</h1>
+      {props.children}
+    </div>
+  )
+}
+
+export default Layout
