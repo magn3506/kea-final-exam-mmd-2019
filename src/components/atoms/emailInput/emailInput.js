@@ -11,7 +11,7 @@ const EmailInputfield = styled.input`
   border: none;
   background: white;
   padding: 10px;
-  width: 200px;
+  width: 225px;
 `
 const SubscribeButton = styled.button`
   padding: 10px;

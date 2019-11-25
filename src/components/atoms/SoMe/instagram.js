@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 const Instagram = () => {
   const IconWrapper = styled.div`
-    margin: 10px;
+    margin: 10px 0px 10px 5px;
     cursor: pointer;
     &:hover {
       opacity: 0.8;

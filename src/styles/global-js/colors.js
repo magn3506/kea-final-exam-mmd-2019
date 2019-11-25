@@ -7,4 +7,5 @@ export const colors = {
   green: "#3B4436",
   darkGrey: "#2C2F2A",
   gold: "#8A6551",
+  footerGreen: "#1f201e",
 }
