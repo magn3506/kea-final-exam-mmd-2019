@@ -1,11 +1,10 @@
-import React, { Component } from "react"
+import React from "react"
 import styled from "styled-components"
 import { colors } from "../../../styles/global-js/colors"
 import Burger from "../../atoms/burger/burger"
 import SiteTitle from "../../atoms/siteTitle/siteTitle"
 import CartIcon from "../../../../static/icons/cart.svg"
 import Logo from "../../../../static/logo_wide.svg"
-import { color } from "@storybook/theming"
 
 const navTop = props => {
   const TopBar = styled.div`

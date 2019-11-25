@@ -2,6 +2,7 @@ import { configure } from "@storybook/react"
 import { action } from "@storybook/addon-actions"
 import { GlobalStyle } from "../src/styles/global-js/globalstyles"
 import { addDecorator } from "@storybook/react"
+import React from "react"
 
 // automatically import all files ending in *.stories.js
 configure(require.context("../src", true, /\.stories\.js$/), module)

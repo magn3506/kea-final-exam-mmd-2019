@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import NavTop from "../../molecules/nav-top/nav-top"
 import NavBottom from "../../molecules/nav-bottom/nav-bottom"
 
-export class nav extends Component {
+class nav extends Component {
   state = {
     siteType: true,
     open: false,
@@ -23,6 +23,7 @@ export class nav extends Component {
   render() {
     return (
       <nav>
+        {/* <h1>Hello</h1> */}
         <NavTop
           handleNavOpen={this.handleNavOpen}
           siteType={this.state.siteType}
