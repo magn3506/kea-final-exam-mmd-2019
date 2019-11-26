@@ -2,20 +2,23 @@ import React from "react"
 
 import styled from "styled-components"
 import { colors } from "../styles/global-js/colors"
-import "../styles/global-css/base.scss"
-import Button from "../components/atoms/button/button"
-
-const StyleCompTest = styled.h1`
-  color: ${colors.green};
-  font-size: 2rem;
-`
+import Layout from "../components/layout/layout"
 
 const indexPage = () => {
+  const MainContentTestRemoveMe = styled.div`
+    max-width: 1000px;
+    margin: 0 auto;
+    background: grey;
+    height: 200vh;
+    text-align: center;
+    font-size: 2em;
+    padding-top: 50px;
+  `
+
   return (
-    <div>
-      <StyleCompTest>Hello World!</StyleCompTest>
-      <Button secondary>Click me!</Button>
-    </div>
+    <Layout>
+      <MainContentTestRemoveMe>INDEX PAGE</MainContentTestRemoveMe>
+    </Layout>
   )
 }
 

@@ -33,8 +33,10 @@ export class navBottom extends Component {
       box-shadow: ${colors.NavBoxShadow};
       @media ${device.laptop} {
         height: 100%;
+
         width: 1000px;
         margin: auto;
+        overflow: initial;
         flex-direction: row;
         background-color: transparent;
         box-shadow: none;
@@ -86,6 +88,76 @@ export class navBottom extends Component {
         padding: 15px 20px;
         @media ${device.laptop} {
           padding: 10px 20px 10px 10px;
+          width: 100px;
+        }
+      }
+
+      /* ? TEST -------------- */
+      flex-direction: column;
+      &:hover > div {
+        opacity: 1;
+        display: block;
+        transition: 0.2s;
+        @media ${device.laptop} {
+          top: -0px;
+          opacity: 1;
+        }
+      }
+      div {
+        position: relative;
+        opacity: 0;
+        display: none;
+
+        /* display: flex; */
+        @media ${device.laptop} {
+          top: -50px;
+          display: block;
+          opacity: 1;
+        }
+        width: 100%;
+
+        ul {
+          padding: 0;
+
+          margin: 0px;
+          width: 100%;
+          background: ${colors.green};
+
+          @media ${device.laptop} {
+            display: flex;
+            position: absolute;
+            left: -100vw;
+            top: -2px;
+            width: auto;
+            height: 40px;
+            z-index: -1;
+
+            &::before {
+              width: 100vw;
+              background: inherit;
+              content: " ";
+              position: relative;
+              left: -100vw;
+            }
+            &::after {
+              width: 100vw;
+              background: inherit;
+              content: " ";
+              position: relative;
+              right: -100vw;
+            }
+          }
+          li {
+            padding: 10px 0px;
+            @media ${device.laptop} {
+              padding: 0px;
+              height: 100%;
+              display: flex;
+            }
+            a {
+              min-width: 120px;
+            }
+          }
         }
       }
     `
@@ -170,7 +242,20 @@ export class navBottom extends Component {
               <a href="">link 1</a>
             </Li>
             <Li>
-              <a href="">link 2</a>
+              <a href="#">link 2</a>
+              <div>
+                <ul>
+                  <li>
+                    <a href="">SubLink 1</a>
+                  </li>
+                  <li>
+                    <a href="">SubLink 2</a>
+                  </li>
+                  <li>
+                    <a href="">SubLink 3</a>
+                  </li>
+                </ul>
+              </div>
             </Li>
             <Li>
               <a href="">link 3</a>
@@ -179,7 +264,20 @@ export class navBottom extends Component {
               <a href="">link 4</a>
             </Li>
             <Li>
-              <a href="">link 5</a>
+              <a href="#">link 5</a>
+              <div>
+                <ul>
+                  <li>
+                    <a href="">SubLink 1</a>
+                  </li>
+                  <li>
+                    <a href="">SubLink 2</a>
+                  </li>
+                  <li>
+                    <a href="">SubLink 3</a>
+                  </li>
+                </ul>
+              </div>
             </Li>
           </LinkContainer>
           <LinkDevider></LinkDevider>
