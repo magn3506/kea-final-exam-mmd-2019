@@ -3,10 +3,21 @@ import styled, { css } from "styled-components"
 import { colors } from "../../../styles/global-js/colors"
 import { device, size } from "../../../styles/global-js/breakpoints"
 import ButiqueSmallLabel from "../../../../static/icons/small_label_butique.svg"
+import BarSmallLabel from "../../../../static/icons/smal_label_bar.svg"
 import SiteTitle from "../../atoms/siteTitle/siteTitle"
 import CloseIcon from "../../atoms/icons/closeIcon/close-icon"
-
+import ArrowIcon from "../../atoms/icons/arrow/arrow"
 export class navBottom extends Component {
+  state = {
+    siteType: true,
+  }
+
+  handleSwitch = () => {
+    this.setState({
+      siteType: !this.state.siteType,
+    })
+  }
+
   render() {
     const NavWrapper = styled.div`
       width: 100vw;
@@ -19,7 +30,9 @@ export class navBottom extends Component {
         position: static;
         min-height: 40px;
         height: 40px;
-        background: ${colors.greenGrade};
+        background: ${this.state.siteType
+          ? colors.greenGrade
+          : colors.redGrade};
         box-shadow: ${colors.NavBoxShadow};
       }
     `
@@ -33,7 +46,6 @@ export class navBottom extends Component {
       box-shadow: ${colors.NavBoxShadow};
       @media ${device.laptop} {
         height: 100%;
-
         width: 1000px;
         margin: auto;
         overflow: initial;
@@ -79,16 +91,33 @@ export class navBottom extends Component {
       }
     `
     const Li = styled.li`
-      background: ${colors.greenGrade};
+      background: ${this.state.siteType ? colors.greenGrade : colors.redGrade};
       display: flex;
       height: 100%;
       a {
         color: white;
         text-transform: capitalize;
         padding: 15px 20px;
+        white-space: nowrap;
         @media ${device.laptop} {
           padding: 10px 20px 10px 10px;
-          width: 100px;
+          width: auto;
+        }
+
+        &:hover > i {
+          svg {
+            transform: rotate(360deg);
+            fill: ${colors.tan};
+          }
+        }
+        i {
+          margin-left: 5px;
+
+          svg {
+            transform: rotate(180deg);
+            width: 10px;
+            height: 10px;
+          }
         }
       }
 
@@ -156,7 +185,8 @@ export class navBottom extends Component {
               display: flex;
             }
             a {
-              min-width: 120px;
+              width: auto;
+              white-space: nowrap;
             }
           }
         }
@@ -206,10 +236,11 @@ export class navBottom extends Component {
     `
 
     const SwitchContainer = styled.div`
-      background: ${colors.redGrade};
+      background: ${this.state.siteType ? colors.redGrade : colors.greenGrade};
       width: 100%;
       display: flex;
       height: 100px;
+      cursor: pointer;
 
       @media ${device.laptop} {
         height: auto;
@@ -239,66 +270,88 @@ export class navBottom extends Component {
             <CloseIconContainer>
               <CloseIcon></CloseIcon>
             </CloseIconContainer>
-            <SiteTitle titleName="Butique"></SiteTitle>
+            <SiteTitle
+              titleName={this.state.siteType ? "Butique" : "Bar & Café"}
+            ></SiteTitle>
           </NavHeader>
           <LinkContainer>
-            <Li>
-              <a href="">link 1</a>
-            </Li>
-            <Li>
-              <a href="#">link 2</a>
-              <div>
-                <ul>
-                  <li>
-                    <a href="">SubLink 1</a>
-                  </li>
-                  <li>
-                    <a href="">SubLink 2</a>
-                  </li>
-                  <li>
-                    <a href="">SubLink 3</a>
-                  </li>
-                </ul>
-              </div>
-            </Li>
-            <Li>
-              <a href="">link 3</a>
-            </Li>
-            <Li>
-              <a href="">link 4</a>
-            </Li>
-            <Li>
-              <a href="#">link 5</a>
-              <div>
-                <ul>
-                  <li>
-                    <a href="">SubLink 1</a>
-                  </li>
-                  <li>
-                    <a href="">SubLink 2</a>
-                  </li>
-                  <li>
-                    <a href="">SubLink 3</a>
-                  </li>
-                </ul>
-              </div>
-            </Li>
+            {this.state.siteType ? (
+              <React.Fragment>
+                <Li>
+                  <a href="">Hats</a>
+                </Li>
+                <Li>
+                  <a href="#">
+                    Boots <i>{<ArrowIcon></ArrowIcon>}</i>
+                  </a>
+                  <div>
+                    <ul>
+                      <li>
+                        <a href="">The Lad</a>
+                      </li>
+                      <li>
+                        <a href="">The Lady</a>
+                      </li>
+                    </ul>
+                  </div>
+                </Li>
+                <Li>
+                  <a href="">Clothing</a>
+                </Li>
+                <Li>
+                  <a href="#">
+                    Accesories <i>{<ArrowIcon></ArrowIcon>}</i>
+                  </a>
+                  <div>
+                    <ul>
+                      <li>
+                        <a href="">Gifts</a>
+                      </li>
+                      <li>
+                        <a href="">Accesories</a>
+                      </li>
+                      <li>
+                        <a href="">Beard</a>
+                      </li>
+                    </ul>
+                  </div>
+                </Li>
+                <Li>
+                  <a href="#">Sale</a>
+                </Li>
+              </React.Fragment>
+            ) : (
+              <React.Fragment>
+                <Li>
+                  <a href="">Bourbon tasting</a>
+                </Li>
+                <Li>
+                  <a href="#">Drinks Menu</a>
+                </Li>
+                <Li>
+                  <a href="">Events</a>
+                </Li>
+                <Li>
+                  <a href="#">Gallery</a>
+                </Li>
+              </React.Fragment>
+            )}
           </LinkContainer>
           <LinkDevider></LinkDevider>
           <GlobalLinks>
             <G_LI>
-              <a href="">Link 1</a>
+              <a href="">Contact</a>
             </G_LI>
             <G_LI>
-              <a href="">Link 2</a>
-            </G_LI>
-            <G_LI>
-              <a href="">Link 3</a>
+              <a href="">About</a>
             </G_LI>
           </GlobalLinks>
-          <SwitchContainer>
+          <SwitchContainer onClick={this.handleSwitch}>
             <SwitchIcon>
-              <img src={ButiqueSmallLabel} alt="" />
+              <img
+                src={this.state.siteType ? BarSmallLabel : ButiqueSmallLabel}
+                alt="shop label icon"
+              />
             </SwitchIcon>
           </SwitchContainer>
         </NavContainer>
