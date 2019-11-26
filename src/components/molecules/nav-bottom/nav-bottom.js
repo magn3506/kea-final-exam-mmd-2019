@@ -97,7 +97,7 @@ export class navBottom extends Component {
       &:hover > div {
         opacity: 1;
         display: block;
-        transition: 0.2s;
+        transition: 0.2s ease-in-out;
         @media ${device.laptop} {
           top: -0px;
           opacity: 1;
@@ -113,6 +113,7 @@ export class navBottom extends Component {
           top: -50px;
           display: block;
           opacity: 1;
+          transition: 0.5s 0.5s ease-in-out;
         }
         width: 100%;
 
@@ -159,6 +160,9 @@ export class navBottom extends Component {
             }
           }
         }
+      }
+      a:hover {
+        color: ${colors.tan};
       }
     `
 
