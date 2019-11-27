@@ -27,6 +27,7 @@ const BarHero = props => {
     div {
       position: absolute;
       width: inherit;
+      z-index: 1;
       svg {
         width: 100%;
       }
