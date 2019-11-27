@@ -7,6 +7,7 @@ import BarSmallLabel from "../../../../static/icons/smal_label_bar.svg"
 import SiteTitle from "../../atoms/siteTitle/siteTitle"
 import CloseIcon from "../../atoms/icons/closeIcon/close-icon"
 import ArrowIcon from "../../atoms/icons/arrow/arrow"
+import { Link } from "gatsby"
 export class navBottom extends Component {
   state = {
     siteType: true,
@@ -278,61 +279,77 @@ export class navBottom extends Component {
             {this.state.siteType ? (
               <React.Fragment>
                 <Li>
-                  <a href="">Hats</a>
+                  <Link to="/products" state={{ filter: "hats" }}>
+                    Hats
+                  </Link>
                 </Li>
                 <Li>
-                  <a href="#">
+                  <Link to="#">
                     Boots <i>{<ArrowIcon></ArrowIcon>}</i>
-                  </a>
+                  </Link>
                   <div>
                     <ul>
                       <li>
-                        <a href="">The Lad</a>
+                        <Link to="/products" state={{ filter: "boots men" }}>
+                          The Lad
+                        </Link>
                       </li>
                       <li>
-                        <a href="">The Lady</a>
+                        <Link to="/products" state={{ filter: "boots women" }}>
+                          The Lady
+                        </Link>
                       </li>
                     </ul>
                   </div>
                 </Li>
                 <Li>
-                  <a href="">Clothing</a>
+                  <Link to="/products" state={{ filter: "clothing" }}>
+                    Clothing
+                  </Link>
                 </Li>
                 <Li>
-                  <a href="#">
+                  <Link to="#">
                     Accesories <i>{<ArrowIcon></ArrowIcon>}</i>
-                  </a>
+                  </Link>
                   <div>
                     <ul>
                       <li>
-                        <a href="">Gifts</a>
+                        <Link to="/products" state={{ filter: "gift" }}>
+                          Gifts
+                        </Link>
                       </li>
                       <li>
-                        <a href="">Accesories</a>
+                        <Link to="/products" state={{ filter: "accesories" }}>
+                          Accesories
+                        </Link>
                       </li>
                       <li>
-                        <a href="">Beard</a>
+                        <Link to="/products" state={{ filter: "beard" }}>
+                          Beard
+                        </Link>
                       </li>
                     </ul>
                   </div>
                 </Li>
                 <Li>
-                  <a href="#">Sale</a>
+                  <Link to="/products" state={{ filter: "sale" }}>
+                    Sale
+                  </Link>
                 </Li>
               </React.Fragment>
             ) : (
               <React.Fragment>
                 <Li>
-                  <a href="">Bourbon tasting</a>
+                  <Link to="/bourbon-tasting">Bourbon tasting</Link>
                 </Li>
                 <Li>
-                  <a href="#">Drinks Menu</a>
+                  <Link to="/drinks-menu">Drinks Menu</Link>
                 </Li>
                 <Li>
-                  <a href="">Events</a>
+                  <Link to="/events">Events</Link>
                 </Li>
                 <Li>
-                  <a href="#">Gallery</a>
+                  <Link to="/gallery">Gallery</Link>
                 </Li>
               </React.Fragment>
             )}
@@ -340,10 +357,10 @@ export class navBottom extends Component {
           <LinkDevider></LinkDevider>
           <GlobalLinks>
             <G_LI>
-              <a href="">Contact</a>
+              <Link to="/contact">Contact</Link>
             </G_LI>
             <G_LI>
-              <a href="">About</a>
+              <Link to="/about">About</Link>
             </G_LI>
           </GlobalLinks>
           <SwitchContainer onClick={this.handleSwitch}>
