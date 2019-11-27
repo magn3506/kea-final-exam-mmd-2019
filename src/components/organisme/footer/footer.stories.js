@@ -6,4 +6,6 @@ export default {
   title: "Components|Organisme/Footer",
 }
 
-export const footer = () => <Footer />
+export const footer = () => <Footer sitetype={false}/>
+
+// True er boutique og false er bar

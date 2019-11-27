@@ -12,7 +12,11 @@ import Hours from "./hours"
 
 const Wrapper = styled.div`
   width: 100%;
-  background: ${colors.footerGreen};
+
+  background: ${props => 
+    props.sitetype === true && colors.redGrade || 
+    props.sitetype === false && colors.footerGreen
+  };
 `
 const Container = styled.div`
 padding: 10px 20px 10px 20px;
@@ -67,9 +71,9 @@ const Newsletterbox = styled.div`
   }
 `
 
-const Footer = () => {
+const Footer = props => {
   return (
-    <Wrapper>
+    <Wrapper sitetype={props.sitetype}>
       <Container>
         <InformationBox>
         <Information />
@@ -81,8 +85,8 @@ const Footer = () => {
         <Newsletterbox>
             <Newsletter />
         </Newsletterbox>
-        </Container>
-        <Copyright />
+        </Container >
+        <Copyright sitetype={props.sitetype}/>
     </Wrapper>
   )
 }

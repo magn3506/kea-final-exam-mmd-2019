@@ -4,7 +4,10 @@ import styled from "styled-components"
 import { colors } from "../../../styles/global-js/colors"
 
 const Wrapper = styled.div`
-  background: ${colors.green};
+    background: ${props => 
+    props.sitetype === true && colors.redGrade || 
+    props.sitetype === false && colors.green
+  };
   width: 100%;
 `
 const Title = styled.p`
@@ -13,9 +16,9 @@ text-align: center;
 padding: 5px 5px 5px 5px;
 `
 
-const Copyright = () => {
+const Copyright = props => {
   return (
-    <Wrapper>
+    <Wrapper sitetype={props.sitetype}>
       <Title>&copy; {(new Date().getFullYear())} Hats, Boots &amp; Bourbon</Title>
     </Wrapper>
   )
