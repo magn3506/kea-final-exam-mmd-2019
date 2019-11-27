@@ -22,11 +22,8 @@ const Layout = props => {
       <Nav siteType={props.siteType}></Nav>
       <TopSpacerModule />
       {props.children}
-<<<<<<< HEAD
       <SwitchSection siteType={props.siteType} />
       <Footer siteType={props.siteType} />
-=======
->>>>>>> magnus_v1
     </div>
   )
 }
