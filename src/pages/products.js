@@ -18,7 +18,7 @@ class ProductsPage extends Component {
       <Layout siteType={true}>
         <MainContentTestRemoveMe>
           <h1>Products Page</h1>
-          {this.props.location.state.filter ? (
+          {this.props.location.state.filter || undefined ? (
             <p>{this.props.location.state.filter}</p>
           ) : (
             <p>"No props"</p>
