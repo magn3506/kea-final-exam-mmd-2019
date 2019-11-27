@@ -9,4 +9,6 @@ export const colors = {
   darkGrey: "#2C2F2A",
   gold: "#8A6551",
   NavBoxShadow: "2px 2px 4px rgba(0, 0, 0, 0.5);",
+  green: "#3B4436",
+  footerGreen: "#1f201e",
 }
