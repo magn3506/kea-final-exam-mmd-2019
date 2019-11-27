@@ -9,21 +9,24 @@ import SwitchSection from "../molecules/switchSection/switchSection"
 
 const Layout = props => {
   const TopSpacerModule = styled.div`
-    height: 75px;
+    height: 40px;
     width: 100vw;
     @media ${device.laptop} {
-      height: 150px;
+      height: 100px;
     }
   `
 
   return (
     <div>
-      <GlobalStyle />
+      <GlobalStyle siteType={props.siteType} />
       <Nav siteType={props.siteType}></Nav>
       <TopSpacerModule />
       {props.children}
+<<<<<<< HEAD
       <SwitchSection siteType={props.siteType} />
       <Footer siteType={props.siteType} />
+=======
+>>>>>>> magnus_v1
     </div>
   )
 }

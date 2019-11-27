@@ -1,6 +1,6 @@
 import Layout from "../components/layout/layout"
 import styled from "styled-components"
-
+import BarHero from "../components/molecules/bar-hero/bar-hero"
 import React, { Component } from "react"
 
 export class BarMainPage extends Component {
@@ -21,9 +21,7 @@ export class BarMainPage extends Component {
 
     return (
       <Layout siteType={this.state.siteType}>
-        <MainContentTestRemoveMe>
-          <h1>Bar Main Page</h1>
-        </MainContentTestRemoveMe>
+        <BarHero></BarHero>
       </Layout>
     )
   }

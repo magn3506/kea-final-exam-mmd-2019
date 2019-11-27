@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components"
+import { colors } from "../global-js/colors"
 export const GlobalStyle = createGlobalStyle`
  @import url('https://fonts.googleapis.com/css?family=Merriweather:400,700,900|Roboto+Slab:400,700&display=swap');
 
@@ -6,6 +7,9 @@ export const GlobalStyle = createGlobalStyle`
     font-family: 'Merriweather', serif;
     padding: 0;
     margin: 0;
+    background: ${props =>
+      props.siteType ? colors.boutiqueBody : colors.barBody};
+
  }   
 
  * {
