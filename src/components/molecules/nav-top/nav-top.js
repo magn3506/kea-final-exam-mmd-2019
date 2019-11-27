@@ -57,7 +57,7 @@ const navTop = props => {
     &:hover {
       opacity: 0.8;
     }
-    @media (max-width: 1000px) {
+    @media (max-width: 1024px) {
       display: none;
     }
   `
@@ -65,7 +65,7 @@ const navTop = props => {
   return (
     <Wrapper>
       <TopBar>
-        <Burger></Burger>
+        <Burger handleNavOpen={props.handleNavOpen}></Burger>
         <LogoIconCon>
           <img src={Logo} alt="logo"></img>
         </LogoIconCon>

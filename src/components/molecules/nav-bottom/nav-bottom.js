@@ -1,7 +1,7 @@
-import React, { Component } from "react"
-import styled, { css } from "styled-components"
+import React from "react"
+import styled from "styled-components"
 import { colors } from "../../../styles/global-js/colors"
-import { device, size } from "../../../styles/global-js/breakpoints"
+import { device } from "../../../styles/global-js/breakpoints"
 import ButiqueSmallLabel from "../../../../static/icons/small_label_butique.svg"
 import BarSmallLabel from "../../../../static/icons/smal_label_bar.svg"
 import SiteTitle from "../../atoms/siteTitle/siteTitle"
@@ -16,6 +16,7 @@ const navBottom = props => {
     background: rgba(35, 37, 33, 0.9);
     position: fixed;
     top: 0;
+    display: ${props => (props.open ? "block" : "none")};
 
     @media ${device.laptop} {
       position: static;
@@ -23,6 +24,7 @@ const navBottom = props => {
       height: 40px;
       background: ${props.siteType ? colors.greenGrade : colors.redGrade};
       box-shadow: ${colors.NavBoxShadow};
+      display: block;
     }
   `
   const NavContainer = styled.div`
@@ -60,6 +62,7 @@ const navBottom = props => {
   const CloseIconContainer = styled.div`
     width: 100%;
     position: relative;
+    cursor: pointer;
     svg {
       position: absolute;
       width: 15px;
@@ -266,10 +269,10 @@ const navBottom = props => {
   `
 
   return (
-    <NavWrapper>
+    <NavWrapper open={props.navOpen}>
       <NavContainer>
         <NavHeader>
-          <CloseIconContainer>
+          <CloseIconContainer onClick={props.handleNavOpen}>
             <CloseIcon></CloseIcon>
           </CloseIconContainer>
           <SiteTitle
