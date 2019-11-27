@@ -9,7 +9,6 @@ const siteTitle = props => {
     height: 100%;
     cursor: pointer;
     display: flex;
-    transform: translateX(-20px);
   `
 
   const SiteTitle = styled.div`

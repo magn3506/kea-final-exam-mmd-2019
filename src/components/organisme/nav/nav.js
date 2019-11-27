@@ -13,7 +13,6 @@ export class nav extends Component {
     this.setState({
       navOpen: !this.state.navOpen,
     })
-    // console.log("**********'***** OPEN")
   }
 
   render() {
