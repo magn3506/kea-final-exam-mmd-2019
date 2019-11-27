@@ -15,11 +15,10 @@ const Layout = props => {
 
   return (
     <div>
-      <GlobalStyle />
+      <GlobalStyle siteType={props.siteType} />
       <Nav siteType={props.siteType}></Nav>
       <TopSpacerModule />
       {props.children}
-      {props.siteType ? <p>Butique</p> : <p>Bar and Café</p>}
     </div>
   )
 }
