@@ -323,7 +323,7 @@ const navBottom = props => {
                       </Link>
                     </li>
                     <li>
-                      <Link to="/products" state={{ filter: "accesories" }}>
+                      <Link to="products" state={{ filter: "accesories" }}>
                         Accesories
                       </Link>
                     </li>
