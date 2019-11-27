@@ -6,10 +6,10 @@ import { device } from "../../styles/global-js/breakpoints"
 
 const Layout = props => {
   const TopSpacerModule = styled.div`
-    height: 75px;
+    height: 40px;
     width: 100vw;
     @media ${device.laptop} {
-      height: 150px;
+      height: 100px;
     }
   `
 
