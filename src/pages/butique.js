@@ -15,56 +15,6 @@ import { StaticQuery, graphql } from "gatsby"
 /* DUMMY DATA SKAL SLETTES OG ERSTATTES MED CONTENTFUL DATA */
 const img = "https://dummyimage.com/1200x1000/000.jpg"
 const categoryImg = "https://dummyimage.com/600x600/000.jpg"
-const products = [
-  {
-    title: "Fedora Furfelt - Stetson",
-    price: "1.099,00 kr",
-    img: "https://dummyimage.com/600x600/000/fff.jpg",
-    id: 1,
-  },
-  {
-    title: "Fedora Furfelt - Stetson",
-    price: "1.099,00 kr",
-    img: "https://dummyimage.com/600x600/000/fff.jpg",
-    id: 2,
-  },
-  {
-    title: "Fedora Furfelt - Stetson",
-    price: "1.099,00 kr",
-    img: "https://dummyimage.com/600x600/000/fff.jpg",
-    id: 3,
-  },
-  {
-    title: "Fedora Furfelt - Stetson",
-    price: "1.099,00 kr",
-    img: "https://dummyimage.com/600x600/000/fff.jpg",
-    id: 4,
-  },
-  {
-    title: "Fedora Furfelt - Stetson",
-    price: "1.099,00 kr",
-    img: "https://dummyimage.com/600x600/000/fff.jpg",
-    id: 5,
-  },
-  {
-    title: "Fedora Furfelt - Stetson",
-    price: "1.099,00 kr",
-    img: "https://dummyimage.com/600x600/000/fff.jpg",
-    id: 6,
-  },
-  {
-    title: "Fedora Furfelt - Stetson",
-    price: "1.099,00 kr",
-    img: "https://dummyimage.com/600x600/000/fff.jpg",
-    id: 7,
-  },
-  {
-    title: "Fedora Furfelt - Stetson",
-    price: "1.099,00 kr",
-    img: "https://dummyimage.com/600x600/000/fff.jpg",
-    id: 8,
-  },
-]
 
 /* DUMMY DATA SKAL SLETTES OG ERSTATTES MED CONTENTFUL DATA */
 
@@ -135,13 +85,8 @@ const ButiqueMainPage = ({ data }) => {
   //   // True = butique, False = bar
   //   siteType: true,
   // }
-  const products2 = data.allContentfulProducts.edges;
-  console.log(products2);
+  const products = data.allContentfulProducts.edges;
 
-  const test = products2.map( e => {
-    return e.node.img[0].resize.src
-  })
-console.log(test);
   const [siteType, setSiteType] = useState(true);
 
     return (
@@ -149,14 +94,14 @@ console.log(test);
         <MainContent>
           <SplashImage img={img} />
           <TitleCTA title="The essential collection" cta="Shop Now" />
-          <ProductTilesGrid products={products2}/>
+          <ProductTilesGrid products={products}/>
           <ImageBanner img={img} text="Some Promotion image and title for bar &amp; café fx. Social shopping drink menu" />
           <CategoryTilesGrid img={categoryImg} title="SHOP BY CATEGORY"/>
           <SaleSection>
-          <ProductTilesSection products={products2} title="Sale Sale Sale" cta="See all" />
+          <ProductTilesSection products={products} title="Sale Sale Sale" cta="See all" />
           </SaleSection>
           <GiftSection>
-          <ProductTilesSection products={products2} title="Great grifts for any occassion" cta="See all" />
+          <ProductTilesSection products={products} title="Great grifts for any occassion" cta="See all" />
           </GiftSection>
         </MainContent>
       </Layout>
