@@ -6,6 +6,11 @@
 
 module.exports = {
   /* Your site config here */
+
+  siteMetadata: {
+    title: "Hats, Boots & Bourbon",
+    author: "Jakob & Magnus",
+  },
   plugins: [
     {
       resolve: `gatsby-source-contentful`,
