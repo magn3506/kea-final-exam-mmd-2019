@@ -10,4 +10,4 @@ const title = "Fedora Furfelt - Stetson"
 const price = "1.099,00 kr"
 const img = "https://dummyimage.com/600x600/000/fff.jpg"
 
-export const productTile = () => <ProductTile title={title} price={price} img={img} />
+export const productTile = () => <ProductTile title={title} price={price} img={img} link="/products" />

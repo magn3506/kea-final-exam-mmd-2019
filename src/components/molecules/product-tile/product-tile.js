@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { colors } from "../../../styles/global-js/colors"
 import { device } from "../../../styles/global-js/breakpoints"
+import { Link } from "gatsby"
 
 const Wrapper = styled.div`
   width: 100px;
@@ -9,6 +10,11 @@ const Wrapper = styled.div`
   margin-right: 5px;
   background: white;
   margin-bottom: 30px;
+  transition: .3s;
+
+  &:hover {
+    opacity: .8;
+  }
 
   @media ${device.tablet} {
     width: 175px;
@@ -42,6 +48,7 @@ const ImgBox = styled.img`
 const ProductTitle = styled.h4`
   font-size: 0.8rem;
   margin-top: 0;
+  color: black;
 
   @media ${device.tablet} {
     font-size: 1rem;
@@ -70,11 +77,13 @@ const ProductPrice = styled.p`
 const ProductTile = props => {
   return (
     <Wrapper>
+      <Link to={props.link}>
       <ImgBox src={props.img} />
       <InfoBox>
         <ProductTitle>{props.title}</ProductTitle>
         <ProductPrice>{props.price}</ProductPrice>
       </InfoBox>
+      </Link>
     </Wrapper>
   )
 }

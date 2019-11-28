@@ -62,6 +62,7 @@ const ProductTilesGrid = props => {
                 title={product.title}
                 price={product.price}
                 img={product.img}
+                link="/products"
               />
             </ProductGrid>
           ))}
