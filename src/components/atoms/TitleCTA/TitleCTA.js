@@ -46,7 +46,7 @@ const TitleCTA = props => {
             <Title>{props.title}</Title>
             <CTABox>
             <Img src={DiamondIcon} alt="diamond icon" />
-            <CTA>{props.cta}</CTA>
+            <CTA to="/products">{props.cta}</CTA>
             <Img src={DiamondIcon} alt="diamond icon" />
             </CTABox>
         </Wrapper>

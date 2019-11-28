@@ -23,8 +23,8 @@ export class ButiqueMainPage extends Component {
     return (
       <Layout siteType={this.state.siteType}>
         <MainContent>
-            <SplashImage img={img}/>
-            <TitleCTA title="The essential collection" cta="Shop Now"/>
+          <SplashImage img={img} />
+          <TitleCTA title="The essential collection" cta="Shop Now" />
         </MainContent>
       </Layout>
     )

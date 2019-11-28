@@ -7,6 +7,8 @@ const Wrapper = styled.div`
   width: 100px;
   margin-left: 5px;
   margin-right: 5px;
+  background: white;
+  margin-bottom: 30px;
 
   @media ${device.tablet} {
     width: 175px;
@@ -23,6 +25,15 @@ const Wrapper = styled.div`
 
 const InfoBox = styled.div`
   background: white;
+  padding: 5px 5px 5px 3px;
+
+  @media ${device.tablet} {
+    padding: 10px 10px 10px 10px;
+  }
+
+  @media ${device.laptop} {
+    padding: 10px 10px 10px 10px;
+  }
 `
 const ImgBox = styled.img`
   width: 100%;
@@ -37,7 +48,7 @@ const ProductTitle = styled.h4`
   }
 
   @media ${device.laptop} {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
 `
 
@@ -45,6 +56,7 @@ const ProductPrice = styled.p`
   color: ${colors.gold};
   font-weight: 600;
   font-size: 0.8rem;
+  margin-bottom: 0;
 
   @media ${device.tablet} {
     font-size: 1rem;
