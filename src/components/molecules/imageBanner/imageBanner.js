@@ -13,10 +13,14 @@ align-items: center;
 
 @media ${device.tablet} {
     justify-content: left;
+    margin-top: 100px;
+    margin-bottom: 100px;
   }
 
   @media ${device.laptop} {
     justify-content: left;
+    margin-top: 125px;
+    margin-bottom: 125px;
   }
 `
 

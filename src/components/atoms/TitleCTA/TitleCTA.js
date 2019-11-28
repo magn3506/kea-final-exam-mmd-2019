@@ -9,6 +9,7 @@ const Wrapper = styled.div`
 display: flex;
 flex-direction: column;
 justify-content: center;
+margin-bottom: 50px;
 `
 
 const Title = styled.h2`
