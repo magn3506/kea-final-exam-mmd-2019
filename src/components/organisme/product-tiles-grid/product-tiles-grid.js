@@ -18,15 +18,23 @@ const ProductGrid = styled.div``
 const ProductTilesGrid = props => {
   let params
 
-  const mediaMobile = window.matchMedia(
-    "(max-width: 600px) and (min-width: 320px)"
-  )
-  const mediaTablet = window.matchMedia(
-    "(max-width: 1024px) and (min-width: 768px)"
-  )
-  const mediaDesktop = window.matchMedia(
-    "(max-width: 2560px) and (min-width: 1024px)"
-  )
+  let mediaMobile;
+
+  let mediaTablet;
+
+  let mediaDesktop;
+
+  if (typeof window !== 'undefined') {
+    mediaMobile = window.matchMedia(
+      "(max-width: 600px) and (min-width: 320px)"
+    )
+    mediaTablet = window.matchMedia(
+      "(max-width: 1024px) and (min-width: 768px)"
+    )
+    mediaDesktop = window.matchMedia(
+      "(max-width: 2560px) and (min-width: 1024px)"
+    )
+  }
 
   const paramsMobile = {
     slidesPerView: 3.3,
