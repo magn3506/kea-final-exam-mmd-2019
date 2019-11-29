@@ -21,5 +21,11 @@ module.exports = {
     },
     `gatsby-plugin-sass`,
     `gatsby-plugin-styled-components`,
+    {
+      resolve: `gatsby-source-instagram-all`,
+      options: {
+        access_token: "360378157.1677ed0.390b016d7ffa49ff8fe3e4390476c88e",
+      },
+    },
   ],
 }
