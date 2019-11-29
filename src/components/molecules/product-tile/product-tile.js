@@ -10,10 +10,10 @@ const Wrapper = styled.div`
   margin-right: 5px;
   background: white;
   margin-bottom: 30px;
-  transition: .3s;
+  transition: 0.3s;
 
   &:hover {
-    opacity: .8;
+    opacity: 0.8;
   }
 
   @media ${device.tablet} {
@@ -32,13 +32,17 @@ const Wrapper = styled.div`
 const InfoBox = styled.div`
   background: white;
   padding: 5px 5px 5px 3px;
+  position: relative;
+  height: 100px;
 
   @media ${device.tablet} {
     padding: 10px 10px 10px 10px;
+    height: 125px;
   }
 
   @media ${device.laptop} {
     padding: 10px 10px 10px 10px;
+    height: 125px;
   }
 `
 const ImgBox = styled.img`
@@ -64,6 +68,8 @@ const ProductPrice = styled.p`
   font-weight: 600;
   font-size: 0.8rem;
   margin-bottom: 0;
+  position: absolute;
+  bottom: 10px;
 
   @media ${device.tablet} {
     font-size: 1rem;
@@ -78,11 +84,11 @@ const ProductTile = props => {
   return (
     <Wrapper>
       <Link to={props.link}>
-      <ImgBox src={props.img} />
-      <InfoBox>
-        <ProductTitle>{props.title}</ProductTitle>
-        <ProductPrice>{props.price}</ProductPrice>
-      </InfoBox>
+        <ImgBox src={props.img} />
+        <InfoBox>
+          <ProductTitle>{props.title}</ProductTitle>
+          <ProductPrice>{props.price}</ProductPrice>
+        </InfoBox>
       </Link>
     </Wrapper>
   )
