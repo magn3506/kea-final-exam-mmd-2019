@@ -57,11 +57,12 @@ const ProductTilesGrid = props => {
       <Container>
         <SwiperGrid {...params}>
           {props.products.map(product => (
-            <ProductGrid key={product.id}>
+            <ProductGrid key={product.node.id}>
               <ProductTile
-                title={product.title}
-                price={product.price}
-                img={product.img}
+                title={product.node.title}
+                price={product.node.price}
+                img={product.node.img[0].resize.src}
+                link="/products"
               />
             </ProductGrid>
           ))}

@@ -2,11 +2,19 @@ import React from "react"
 import styled from "styled-components"
 import { colors } from "../../../styles/global-js/colors"
 import { device } from "../../../styles/global-js/breakpoints"
+import { Link } from "gatsby"
 
 const Wrapper = styled.div`
   width: 100px;
   margin-left: 5px;
   margin-right: 5px;
+  background: white;
+  margin-bottom: 30px;
+  transition: 0.3s;
+
+  &:hover {
+    opacity: 0.8;
+  }
 
   @media ${device.tablet} {
     width: 175px;
@@ -23,6 +31,19 @@ const Wrapper = styled.div`
 
 const InfoBox = styled.div`
   background: white;
+  padding: 5px 5px 5px 3px;
+  position: relative;
+  height: 100px;
+
+  @media ${device.tablet} {
+    padding: 10px 10px 10px 10px;
+    height: 125px;
+  }
+
+  @media ${device.laptop} {
+    padding: 10px 10px 10px 10px;
+    height: 125px;
+  }
 `
 const ImgBox = styled.img`
   width: 100%;
@@ -31,13 +52,14 @@ const ImgBox = styled.img`
 const ProductTitle = styled.h4`
   font-size: 0.8rem;
   margin-top: 0;
+  color: black;
 
   @media ${device.tablet} {
     font-size: 1rem;
   }
 
   @media ${device.laptop} {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
 `
 
@@ -45,6 +67,9 @@ const ProductPrice = styled.p`
   color: ${colors.gold};
   font-weight: 600;
   font-size: 0.8rem;
+  margin-bottom: 0;
+  position: absolute;
+  bottom: 10px;
 
   @media ${device.tablet} {
     font-size: 1rem;
@@ -58,11 +83,13 @@ const ProductPrice = styled.p`
 const ProductTile = props => {
   return (
     <Wrapper>
-      <ImgBox src={props.img} />
-      <InfoBox>
-        <ProductTitle>{props.title}</ProductTitle>
-        <ProductPrice>{props.price}</ProductPrice>
-      </InfoBox>
+      <Link to={props.link}>
+        <ImgBox src={props.img} />
+        <InfoBox>
+          <ProductTitle>{props.title}</ProductTitle>
+          <ProductPrice>{props.price}</ProductPrice>
+        </InfoBox>
+      </Link>
     </Wrapper>
   )
 }
