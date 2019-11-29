@@ -8,33 +8,42 @@ import "swiper/css/swiper.css"
 const Wrapper = styled.div`
   width: 100%;
 `
-const Container = styled.div`
+const ContainerMobile = styled.div`
   display: flex;
   flex-direction: row;
+  
+  @media (min-width: 600px) {
+   display: none;
+  }
+  @media (min-width: 768px) {
+   display: none;
+  }
 `
+const ContainerTablet = styled.div`
+  display: none;
+
+  @media (min-width: 768px) {
+    display: flex;
+    flex-direction: row;
+  }
+  @media (min-width: 1024px) {
+   display: none;
+  }
+`
+const ContainerDesktop = styled.div`
+  display: none;
+
+  @media (min-width: 1024px) {
+  display: flex;
+  flex-direction: row;
+  }
+`
+
 const SwiperGrid = styled(Swiper)``
+
 const ProductGrid = styled.div``
 
 const ProductTilesGrid = props => {
-  let params
-
-  let mediaMobile;
-
-  let mediaTablet;
-
-  let mediaDesktop;
-
-  if (typeof window !== 'undefined') {
-    mediaMobile = window.matchMedia(
-      "(max-width: 600px) and (min-width: 320px)"
-    )
-    mediaTablet = window.matchMedia(
-      "(max-width: 1024px) and (min-width: 768px)"
-    )
-    mediaDesktop = window.matchMedia(
-      "(max-width: 2560px) and (min-width: 1024px)"
-    )
-  }
 
   const paramsMobile = {
     slidesPerView: 3.3,
@@ -49,22 +58,12 @@ const ProductTilesGrid = props => {
     slidesPerView: 4,
     spaceBetween: 0,
   }
-  if (mediaMobile.matches) {
-    params = paramsMobile
-    console.log("Mobile", params, mediaMobile)
-  } else if (mediaTablet.matches) {
-    params = paramsTablet
-    console.log("Tablet", params, mediaTablet)
-  } else if (mediaDesktop.matches) {
-    params = paramsDesktop
-    console.log("Desktop", params, mediaDesktop)
-  }
 
   return (
     <Wrapper>
-      <Container>
-        <SwiperGrid {...params}>
-          {props.products.map(product => (
+      <ContainerMobile>
+        <SwiperGrid {...paramsMobile}>
+        {props.products.map(product => (
             <ProductGrid key={product.node.id}>
               <ProductTile
                 title={product.node.title}
@@ -75,7 +74,35 @@ const ProductTilesGrid = props => {
             </ProductGrid>
           ))}
         </SwiperGrid>
-      </Container>
+      </ContainerMobile>
+      <ContainerTablet>
+        <SwiperGrid {...paramsTablet}>
+        {props.products.map(product => (
+            <ProductGrid key={product.node.id}>
+              <ProductTile
+                title={product.node.title}
+                price={product.node.price}
+                img={product.node.img[0].resize.src}
+                link="/products"
+              />
+            </ProductGrid>
+          ))}
+        </SwiperGrid>
+      </ContainerTablet>
+      <ContainerDesktop>
+        <SwiperGrid {...paramsDesktop}>
+        {props.products.map(product => (
+            <ProductGrid key={product.node.id}>
+              <ProductTile
+                title={product.node.title}
+                price={product.node.price}
+                img={product.node.img[0].resize.src}
+                link="/products"
+              />
+            </ProductGrid>
+          ))}
+        </SwiperGrid>
+      </ContainerDesktop>
     </Wrapper>
   )
 }
