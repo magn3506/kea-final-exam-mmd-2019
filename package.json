@@ -15,6 +15,7 @@
     "build-storybook": "env-cmd -f .env.storybook build-storybook -s public"
   },
   "dependencies": {
+    "@contentful/rich-text-react-renderer": "^13.4.0",
     "babel-plugin-styled-components": "^1.10.6",
     "gatsby": "^2.17.11",
     "gatsby-plugin-sass": "^2.1.22",

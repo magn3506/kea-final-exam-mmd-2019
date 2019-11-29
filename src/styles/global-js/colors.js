@@ -12,4 +12,5 @@ export const colors = {
   footerGreen: "#1f201e",
   barBody: "#34302C",
   boutiqueBody: "#2C2F2A",
+  red: "#462D29",
 }
