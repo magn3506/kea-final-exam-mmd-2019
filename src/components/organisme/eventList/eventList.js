@@ -17,7 +17,8 @@ export default props => (
               shortDescription {
                 shortDescription
               }
-              date(formatString: "DD MMM HH:MM")
+              time
+              date(formatString: "DD MMM")
             }
           }
         }
@@ -29,22 +30,36 @@ export default props => (
 
 const EventList = ({ data }) => {
   const EventListWrapper = styled.div`
-    margin: 0 auto;
-    max-width: 1024px;
     padding: 5px 0px;
-    background: ${colors.redGrade};
-    display: flex;
-    flex-direction: column;
 
+    display: grid;
+    width: 100%;
     @media ${device.tablet} {
-      flex-direction: row;
+      grid-template-columns: 1fr 1fr;
     }
   `
+
+  const Event = styled.div`
+    background: ${colors.redGrade};
+    margin: 0 auto;
+    max-width: 1024px;
+    padding: 25px 0px 100px 0px;
+  `
+  const Title = styled.h2`
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px 0px;
+    color: ${colors.gold};
+  `
+
   return (
-    <EventListWrapper>
-      {data.allContentfulEvents.edges.map(e => {
-        return <EventItem data={e.node}></EventItem>
-      })}
-    </EventListWrapper>
+    <Event>
+      <Title>Events</Title>
+      <EventListWrapper>
+        {data.allContentfulEvents.edges.map(e => {
+          return <EventItem data={e.node}></EventItem>
+        })}
+      </EventListWrapper>
+    </Event>
   )
 }
