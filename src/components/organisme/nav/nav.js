@@ -18,7 +18,7 @@ export class nav extends Component {
   render() {
     const Header = styled.header`
       position: fixed;
-      z-index: 999999999;
+      z-index: 1;
     `
 
     return (
