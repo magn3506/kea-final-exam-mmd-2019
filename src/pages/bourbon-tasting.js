@@ -1,32 +1,68 @@
-import Layout from "../components/layout/layout"
+import React from "react"
 import styled from "styled-components"
+import { colors } from "../styles/global-js/colors"
+import Layout from "../components/layout/layout"
+import { graphql, useStaticQuery } from "gatsby"
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
+import VideoPromo from "../components/organisme/videoPromo/videoPromo"
 
-import React, { Component } from "react"
+const BourbonTasting = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      contentfulBourbonTasting {
+        promoVideoUrl {
+          fixed {
+            src
+          }
+        }
+        body {
+          json
+        }
+      }
+    }
+  `)
 
-export class BourbonTastingPage extends Component {
-  state = {
-    // True = butique, False = bar
-    siteType: false,
-  }
-  render() {
-    const MainContentTestRemoveMe = styled.div`
-      max-width: 1000px;
-      margin: 0 auto;
-      background: grey;
-      height: 200vh;
-      text-align: center;
-      font-size: 2em;
-      padding-top: 50px;
-    `
+  const Wrapper = styled.div`
+    max-width: 1024px;
+    margin: 10px auto;
+  `
+  const Container = styled.div`
+    background: ${colors.red};
+    width: 100%;
+  `
+  const BodyText = styled.div`
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 100px 20px;
+    width: 100%;
+    color: ${colors.grey};
+    b {
+      color: ${colors.gold};
+    }
+    p {
+      letter-spacing: 1px;
+    }
+    h1,
+    h2,
+    h3,
+    h4 {
+      width: 100%;
+      color: ${colors.gold};
+    }
+  `
 
-    return (
-      <Layout siteType={this.state.siteType}>
-        <MainContentTestRemoveMe>
-          <h1>Bourbon Tasting Page</h1>
-        </MainContentTestRemoveMe>
-      </Layout>
-    )
-  }
+  return (
+    <Layout siteType={false}>
+      <Wrapper>
+        <Container>
+          <BodyText>
+            {documentToReactComponents(data.contentfulBourbonTasting.body.json)}
+          </BodyText>
+        </Container>
+      </Wrapper>
+      <VideoPromo></VideoPromo>
+    </Layout>
+  )
 }
 
-export default BourbonTastingPage
+export default BourbonTasting

@@ -5,7 +5,9 @@ import { colors } from "../../../styles/global-js/colors"
 import ButtonBar from "../../atoms/button-bar/button-bar"
 
 const videoPromo = () => {
-  const VideoPromoWrapper = styled.div``
+  const VideoPromoWrapper = styled.div`
+    margin-bottom: 10px;
+  `
 
   const VideoPromoContainer = styled.div`
     padding: 50px 20px;
