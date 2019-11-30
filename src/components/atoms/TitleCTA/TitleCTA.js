@@ -13,10 +13,13 @@ margin-bottom: 50px;
 `
 
 const Title = styled.h2`
-text-align: center;
+text-align: center !important;
 color: white;
 text-transform: uppercase;
 letter-spacing: 2px;
+width: 100%;
+font-size: 1.5rem;
+margin-top: 50px;
 `
 
 const CTABox = styled.div`

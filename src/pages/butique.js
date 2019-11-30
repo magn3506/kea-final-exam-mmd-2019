@@ -74,6 +74,19 @@ export default props => (
           }
         }
       }
+      allContentfulCollectionTeaser {
+        edges {
+          node {
+            title
+            collectionImage {
+              resize(width: 300, height: 300) {
+                src
+              }
+            }
+            filter
+          }
+        }
+      }
     }
     `}
     render={data => <ButiqueMainPage data={data} {...props}  />}
@@ -86,6 +99,8 @@ const ButiqueMainPage = ({ data }) => {
   //   siteType: true,
   // }
   const products = data.allContentfulProducts.edges;
+  const collections = data.allContentfulCollectionTeaser.edges;
+  console.log(collections);
 
   const [siteType, setSiteType] = useState(true);
 
@@ -95,8 +110,8 @@ const ButiqueMainPage = ({ data }) => {
           <SplashImage img={img} />
           <TitleCTA title="The essential collection" cta="Shop Now" />
           <ProductTilesGrid products={products}/>
-          <ImageBanner img={img} text="Some Promotion image and title for bar &amp; café fx. Social shopping drink menu" />
-          <CategoryTilesGrid img={categoryImg} title="SHOP BY CATEGORY"/>
+          <ImageBanner img={"https://p2d7x8x2.stackpathcdn.com/wordpress/wp-content/uploads/2017/01/old-fashioned-1024x684.jpg"} text="Some Promotion image and title for bar &amp; café fx. Social shopping drink menu" />
+          <CategoryTilesGrid collections={collections} title="SHOP BY CATEGORY"/>
           <SaleSection>
           <ProductTilesSection products={products} title="Sale Sale Sale" cta="See all" />
           </SaleSection>

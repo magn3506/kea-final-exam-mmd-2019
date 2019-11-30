@@ -5,17 +5,17 @@ import { Link } from "gatsby"
 import { device } from "../../../styles/global-js/breakpoints"
 
 const Wrapper = styled.div`
-width: 280px;
-height: 300px;
-position: relative;
-transition: .3s;
-margin-bottom: 15px;
+  width: 280px;
+  height: 300px;
+  position: relative;
+  transition: 0.3s;
+  margin-bottom: 15px;
 
-&:hover {
-    opacity: .8;
-}
+  &:hover {
+    opacity: 0.8;
+  }
 
-@media ${device.tablet} {
+  @media ${device.tablet} {
     width: 200px;
     height: 215px;
     margin-bottom: 0;
@@ -32,20 +32,21 @@ const ImgBox = styled.img`
   object-fit: cover;
 `
 const Title = styled.h3`
-color: white;
-position: absolute;
-left: 10px;
+  color: white;
+  position: absolute;
+  left: 10px;
+  font-size: 1.2rem;
 `
 
 const CategoryTile = props => {
-    return (
-        <Wrapper>
-            <Link to={props.link}>
-            <Title>{props.title}</Title>
-            <ImgBox src={props.img} />
-            </Link>
-        </Wrapper>
-    )    
+  return (
+    <Wrapper>
+        <Link to="/products" state={{ filter: props.link }}>
+          <Title>{props.title}</Title>
+          <ImgBox src={props.img} />
+        </Link>
+    </Wrapper>
+  )
 }
 
 export default CategoryTile

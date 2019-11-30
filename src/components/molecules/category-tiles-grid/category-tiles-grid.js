@@ -29,6 +29,7 @@ const Title = styled.h2`
   text-transform: uppercase;
   letter-spacing: 2px;
   padding-bottom: 12px;
+  font-size: 1.5rem;
 `
 
 const CategoryTilesGrid = props => {
@@ -36,9 +37,9 @@ const CategoryTilesGrid = props => {
         <Wrapper>
             <Title>{props.title}</Title>
             <Container>
-            <CategoryTile img={props.img} title="Hats" link="/products" />
-            <CategoryTile img={props.img} title="Ladies" link="/products" />
-            <CategoryTile img={props.img} title="Boots" link="/products" />
+              {props.collections.map( category => (
+                <CategoryTile img={category.node.collectionImage.resize.src} title={category.node.title} link={category.node.filter} />
+              ))}
             </Container>
         </Wrapper>
     )

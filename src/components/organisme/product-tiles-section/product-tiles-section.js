@@ -15,6 +15,7 @@ const Title = styled.h2`
   text-transform: uppercase;
   letter-spacing: 2px;
   padding: 0px 0px 12px 12px;
+  font-size: 1.5rem;
 `
 
 const CTA = styled(Link)`

@@ -9,6 +9,7 @@ const Wrapper = styled.div`
 const Title = styled.h4`
   color: ${colors.gold};
   font-weight: 600;
+  font-size: 1.2rem;
 `
 
 const List = styled.ul`
