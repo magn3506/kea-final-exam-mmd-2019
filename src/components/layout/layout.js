@@ -10,7 +10,7 @@ import SwitchSection from "../molecules/switchSection/switchSection"
 const Layout = props => {
   const TopSpacerModule = styled.div`
     height: 40px;
-    width: 100vw;
+
     @media ${device.laptop} {
       height: 100px;
     }

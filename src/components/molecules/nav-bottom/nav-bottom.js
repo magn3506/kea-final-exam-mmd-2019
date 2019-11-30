@@ -37,7 +37,7 @@ const navBottom = props => {
     box-shadow: ${colors.NavBoxShadow};
     @media ${device.laptop} {
       height: 100%;
-      width: 1000px;
+      width: 1024px;
       margin: auto;
       overflow: initial;
       flex-direction: row;
@@ -92,7 +92,7 @@ const navBottom = props => {
       padding: 15px 20px;
       white-space: nowrap;
       @media ${device.laptop} {
-        padding: 10px 20px 10px 10px;
+        padding: 10px 20px 10px 0px;
         width: auto;
       }
 

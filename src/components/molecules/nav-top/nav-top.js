@@ -16,10 +16,11 @@ const navTop = props => {
     box-sizing: border-box;
     display: flex;
     justify-content: space-between;
-    max-width: 1000px;
+    max-width: 1024px;
     margin: 0 auto;
     @media ${device.laptop} {
       height: 60px;
+      padding: 0px;
     }
   `
 
