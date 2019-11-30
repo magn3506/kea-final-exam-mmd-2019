@@ -86,7 +86,14 @@ const navBottom = props => {
     background: ${props.siteType ? colors.greenGrade : colors.redGrade};
     display: flex;
     height: 100%;
-    a {
+    span {
+      cursor: pointer;
+      &:hover {
+        color: ${colors.tan};
+      }
+    }
+    a,
+    span {
       color: white;
       text-transform: capitalize;
       padding: 15px 20px;
@@ -115,6 +122,7 @@ const navBottom = props => {
 
     /* ? TEST -------------- */
     flex-direction: column;
+
     &:hover > div {
       opacity: 1;
       display: block;
@@ -288,9 +296,9 @@ const navBottom = props => {
                 </Link>
               </Li>
               <Li>
-                <Link to="#">
+                <span>
                   Boots <i>{<ArrowIcon></ArrowIcon>}</i>
-                </Link>
+                </span>
                 <div>
                   <ul>
                     <li>
@@ -312,9 +320,9 @@ const navBottom = props => {
                 </Link>
               </Li>
               <Li>
-                <Link to="#">
+                <span>
                   Accesories <i>{<ArrowIcon></ArrowIcon>}</i>
-                </Link>
+                </span>
                 <div>
                   <ul>
                     <li>
