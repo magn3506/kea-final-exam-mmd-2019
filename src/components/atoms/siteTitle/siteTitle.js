@@ -34,8 +34,9 @@ const siteTitle = props => {
   // `
 
   const H1 = styled.h1`
-    font-size: 16px;
-    display: block;
+    font-size: 20px;
+    width: 150px;
+    display: inline-block;
     color: ${colors.tan};
     text-transform: uppercase;
     text-align: center;

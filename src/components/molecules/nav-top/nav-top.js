@@ -70,7 +70,7 @@ const navTop = props => {
           <img src={Logo} alt="logo"></img>
         </LogoIconCon>
         <SiteTitle
-          titleName={props.siteType ? "Butique" : "Bar & Cafe"}
+          titleName={props.siteType ? "Boutique" : "Bar & Cafe"}
         ></SiteTitle>
         <CartIconCon>
           <img src={CartIcon} alt="cart" />
