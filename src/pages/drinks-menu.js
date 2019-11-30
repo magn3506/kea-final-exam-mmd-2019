@@ -1,7 +1,8 @@
 import Layout from "../components/layout/layout"
 import styled from "styled-components"
-
+import DrinksMenuComponent from "../components/organisme/drinks-menu/drinks-menu-component"
 import React, { Component } from "react"
+import { device } from "../styles/global-js/breakpoints"
 
 export class DrinksMenu extends Component {
   state = {
@@ -9,21 +10,19 @@ export class DrinksMenu extends Component {
     siteType: false,
   }
   render() {
-    const MainContentTestRemoveMe = styled.div`
-      max-width: 1000px;
+    const Wrapper = styled.div`
+      max-width: 1024px;
       margin: 0 auto;
-      background: grey;
-      height: 200vh;
-      text-align: center;
-      font-size: 2em;
-      padding-top: 50px;
+      @media ${device.laptop} {
+        margin: 100px auto;
+      }
     `
 
     return (
       <Layout siteType={this.state.siteType}>
-        <MainContentTestRemoveMe>
-          <h1>Drinks Menu Page</h1>
-        </MainContentTestRemoveMe>
+        <Wrapper>
+          <DrinksMenuComponent></DrinksMenuComponent>
+        </Wrapper>
       </Layout>
     )
   }
