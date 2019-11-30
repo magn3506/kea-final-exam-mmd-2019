@@ -50,6 +50,7 @@ const BackSection = styled.div`
     align-items: center;
     margin-bottom: 10px;
     margin-top: 25px;
+    padding: 10px;
   }
 `
 const Logo = styled.img`
@@ -63,6 +64,10 @@ const BackText = styled.p`
   position: relative;
   padding-left: 20px;
   cursor: pointer;
+
+  & a {
+    color: ${colors.gold};
+  }
 
   @media ${device.tablet} {
     font-size: 0.8rem;
@@ -100,24 +105,57 @@ const ImageCon = styled.div`
   justify-content: center;
 
   @media ${device.tablet} {
-    align-items: center;
+    align-items: initial;
+    background: ${colors.darkGrade};
   }
 
   @media ${device.laptop} {
     align-items: center;
+    background: ${colors.darkGrade};
+  }
+`
+
+const GalleryImagesCon = styled.div`
+  display: none;
+
+  @media ${device.tablet} {
+    display: flex;
+    display: flex;
+    flex-direction: column;
+    align-self: baseline;
+    margin-top: 10px;
   }
 
-  & img {
+  @media ${device.laptop} {
+    display: flex;
+    flex-direction: column;
+    align-self: baseline;
+    margin-top: 10px;
+  }
+`
+
+const GalleryImage = styled.img`
+width: 50px;
+height: 50px;
+margin: 0 10px 7px 10px;
+cursor: pointer;
+transition: .3s;
+
+&:hover {
+  opacity: .8;
+}
+`
+
+const ShownImage = styled.img`
     @media ${device.tablet} {
       width: 350px;
       height: 350px;
     }
 
     @media ${device.laptop} {
-      width: 350px;
-      height: 350px;
+      width: 400px;
+      height: 400px;
     }
-  }
 `
 
 const Title = styled.h1`
@@ -258,12 +296,18 @@ const Product = props => {
     <Layout siteType={true}>
       <MainContent>
       <BackSection>
-        <BackText>Back</BackText>
+        <BackText><Link to="/products">Back</Link></BackText>
         <Logo src={BoutiqueLogo} />
       </BackSection>
       <ProductWrapper>
         <ImageCon>
-          <img src={img[0].resize.src} />
+          <GalleryImagesCon>
+            <GalleryImage src={img[0].resize.src}/>
+            <GalleryImage src={img[0].resize.src}/>
+            <GalleryImage src={img[0].resize.src}/>
+            <GalleryImage src={img[0].resize.src}/>
+          </GalleryImagesCon>
+          <ShownImage src={img[0].resize.src} />
         </ImageCon>
         <ProductInfoCon>
           <ProductInfoTextCon>

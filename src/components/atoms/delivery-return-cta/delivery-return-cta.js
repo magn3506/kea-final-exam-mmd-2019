@@ -15,10 +15,26 @@ margin: 10px;
 const DeliveryImg = styled.img`
 width: 35px;
 margin-right: 15px;
+
+@media ${device.tablet} {
+    width: 25px;
+  }
+
+  @media ${device.laptop} {
+    width: 35px;
+  }
 `
 const ReturnImg = styled.img`
 width: 35px;
 margin-right: 15px;
+
+@media ${device.tablet} {
+    width: 25px;
+  }
+
+  @media ${device.laptop} {
+    width: 35px;
+  }
 `
 
 const DeliveryCon = styled.div`
@@ -43,7 +59,8 @@ color: white;
 margin-bottom: 5px;
 
 @media ${device.tablet} {
-    font-size: 0.8rem;
+    font-size: 0.6rem;
+    margin-bottom: 0;
   }
 
   @media ${device.laptop} {
@@ -57,7 +74,8 @@ margin-top: 0;
 font-size: 0.9rem;
 
 @media ${device.tablet} {
-    font-size: 0.8rem;
+    font-size: 0.6rem;
+    margin-bottom: 0;
   }
 
   @media ${device.laptop} {
@@ -72,7 +90,8 @@ margin-bottom: 5px;
 font-size: 0.9rem;
 
 @media ${device.tablet} {
-    font-size: 0.8rem;
+    font-size: 0.6rem;
+    margin-bottom: 0;
   }
 
   @media ${device.laptop} {
@@ -86,7 +105,8 @@ margin-top: 0;
 font-size: 0.9rem;
 
 @media ${device.tablet} {
-    font-size: 0.8rem;
+    font-size: 0.6rem;
+    margin-bottom: 0;
   }
 
   @media ${device.laptop} {

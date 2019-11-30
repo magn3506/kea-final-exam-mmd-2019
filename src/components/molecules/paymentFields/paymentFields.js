@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 
 import { colors } from "../../../styles/global-js/colors"
+import { device } from "../../../styles/global-js/breakpoints"
 
 const Wrapper = styled.div`
 margin: 10px;
@@ -49,6 +50,14 @@ font-weight: 600;
 &:hover {
   opacity: .8;
 }
+
+@media ${device.tablet} {
+    width: 150px;
+  }
+
+  @media ${device.laptop} {
+    width: 175px;
+  }
 `
 const AddCart = styled.button`
 width: 175px;
@@ -64,6 +73,14 @@ font-weight: 600;
 &:hover {
   opacity: .8;
 }
+
+@media ${device.tablet} {
+    width: 150px;
+  }
+
+  @media ${device.laptop} {
+    width: 175px;
+  }
 `
 
 const PaymentFields = () => {
