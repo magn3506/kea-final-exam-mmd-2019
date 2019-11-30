@@ -3,6 +3,8 @@ import styled from "styled-components"
 import Delivery from "../../../../static/icons/delivery-truck.svg"
 import BoxReturn from "../../../../static/icons/box-return.svg"
 
+import { device } from "../../../styles/global-js/breakpoints"
+
 const Wrapper = styled.div`
 display: flex;
 flex-direction: row;
@@ -39,11 +41,28 @@ font-weight: 600;
 font-size: 0.9rem;
 color: white;
 margin-bottom: 5px;
+
+@media ${device.tablet} {
+    font-size: 0.8rem;
+  }
+
+  @media ${device.laptop} {
+    font-size: 0.6rem;
+    margin-bottom: 0;
+  }
 `
 const DeliveryText = styled.p`
 color: white;
 margin-top: 0;
 font-size: 0.9rem;
+
+@media ${device.tablet} {
+    font-size: 0.8rem;
+  }
+
+  @media ${device.laptop} {
+    font-size: 0.6rem;
+  }
 `
 
 const ReturnTitle = styled.p`
@@ -51,11 +70,28 @@ font-weight: 600;
 color: white;
 margin-bottom: 5px;
 font-size: 0.9rem;
+
+@media ${device.tablet} {
+    font-size: 0.8rem;
+  }
+
+  @media ${device.laptop} {
+    font-size: 0.6rem;
+    margin-bottom: 0;
+  }
 `
 const ReturnText = styled.p`
 color: white;
 margin-top: 0;
 font-size: 0.9rem;
+
+@media ${device.tablet} {
+    font-size: 0.8rem;
+  }
+
+  @media ${device.laptop} {
+    font-size: 0.6rem;
+  }
 `
 
 const DeliveryReturnCTA = () => {

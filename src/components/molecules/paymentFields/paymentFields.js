@@ -38,22 +38,32 @@ justify-content: space-between;
 const BuyNow = styled.button`
 width: 175px;
 height: 35px;
+cursor: pointer;
+transition: .3s;
 
 background: ${colors.green};
 border-radius: 3px;
 border: none;
 color: white;
 font-weight: 600;
+&:hover {
+  opacity: .8;
+}
 `
 const AddCart = styled.button`
 width: 175px;
 height: 35px;
+cursor: pointer;
+transition: .3s;
 
 background: ${colors.gold};
 border-radius: 3px;
 border: none;
 color: white;
 font-weight: 600;
+&:hover {
+  opacity: .8;
+}
 `
 
 const PaymentFields = () => {
