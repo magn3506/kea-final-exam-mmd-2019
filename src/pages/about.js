@@ -1,32 +1,65 @@
+import React from "react"
 import Layout from "../components/layout/layout"
+import { colors } from "../styles/global-js/colors"
+import { device } from "../styles/global-js/breakpoints"
 import styled from "styled-components"
+import { graphql, useStaticQuery } from "gatsby"
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
+import ImageGallery from "../components/organisme/image-gallery/image-gallery"
+const AboutPage = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      contentfulAboutPage {
+        body {
+          json
+        }
+      }
+    }
+  `)
 
-import React, { Component } from "react"
+  const Wrapper = styled.div`
+    max-width: 1024px;
+    margin: 0px auto;
+    background: ${colors.grey};
+    padding: 25px;
+    box-shadow: ${colors.NavBoxShadow};
+    @media ${device.laptop} {
+      padding: 100px 0px;
+      margin: 0px auto 50px auto;
+    }
+  `
+  const Container = styled.div`
+    width: 100%;
+  `
+  const BodyText = styled.div`
+    max-width: 800px;
+    margin: 0 auto;
+    width: 100%;
 
-export class AboutPage extends Component {
-  state = {
-    // True = butique, False = bar
-    siteType: true,
-  }
-  render() {
-    const MainContentTestRemoveMe = styled.div`
-      max-width: 1000px;
-      margin: 0 auto;
-      background: grey;
-      height: 200vh;
-      text-align: center;
-      font-size: 2em;
-      padding-top: 50px;
-    `
+    p {
+      letter-spacing: 0.3px;
+    }
+    h1,
+    h2,
+    h3,
+    h4 {
+      width: 100%;
+      color: ${colors.gold};
+    }
+  `
 
-    return (
-      <Layout siteType={this.state.siteType}>
-        <MainContentTestRemoveMe>
-          <h1>About Page</h1>
-        </MainContentTestRemoveMe>
-      </Layout>
-    )
-  }
+  return (
+    <Layout siteType={true}>
+      <Wrapper>
+        <Container>
+          <BodyText>
+            {documentToReactComponents(data.contentfulAboutPage.body.json)}
+            <ImageGallery></ImageGallery>
+          </BodyText>
+        </Container>
+      </Wrapper>
+    </Layout>
+  )
 }
 
 export default AboutPage
