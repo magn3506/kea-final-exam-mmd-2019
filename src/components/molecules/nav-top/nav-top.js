@@ -32,7 +32,8 @@ const navTop = props => {
 
   const BottomLine = styled.div`
     height: 5px;
-    background: ${colors.greenGrade};
+    background: ${props =>
+      props.siteType ? colors.greenGrade : colors.redGrade};
     @media ${device.laptop} {
       display: none;
     }
@@ -79,7 +80,7 @@ const navTop = props => {
           <img src={CartIcon} alt="cart" />
         </CartIconCon>
       </TopBar>
-      <BottomLine></BottomLine>
+      <BottomLine siteType={props.siteType}></BottomLine>
     </Wrapper>
   )
 }
