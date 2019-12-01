@@ -19,7 +19,7 @@ export class BarMainPage extends Component {
   render() {
     return (
       <Layout siteType={this.state.siteType}>
-        <BarHero></BarHero>
+        <BarHero color={colors.red}></BarHero>
         <BarCafeSection></BarCafeSection>
         <VideoPromo></VideoPromo>
         <ImageTeaser imageUrl="https://p2d7x8x2.stackpathcdn.com/wordpress/wp-content/uploads/2017/01/old-fashioned-1024x684.jpg"></ImageTeaser>

@@ -6,6 +6,7 @@ import styled from "styled-components"
 import { graphql, useStaticQuery } from "gatsby"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import ImageGallery from "../components/organisme/image-gallery/image-gallery"
+import BarHero from "../components/molecules/bar-hero/bar-hero"
 const AboutPage = () => {
   const data = useStaticQuery(graphql`
     query {
@@ -22,6 +23,7 @@ const AboutPage = () => {
     margin: 0px auto;
     background: ${colors.grey};
     padding: 25px;
+
     box-shadow: ${colors.NavBoxShadow};
     @media ${device.laptop} {
       padding: 100px 0px;
@@ -50,6 +52,8 @@ const AboutPage = () => {
 
   return (
     <Layout siteType={true}>
+      <BarHero color={colors.dark}></BarHero>
+
       <Wrapper>
         <Container>
           <BodyText>

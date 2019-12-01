@@ -1,18 +1,18 @@
 import React from "react"
 
-const BarHeroShape = () => {
+const BarHeroShape = props => {
   return (
     <>
       <svg
         preserveAspectRatio="none"
         viewBox="0 0 314 311"
-        fill="none"
+        fill="#42621"
         xmlns="http://www.w3.org/2000/svg"
       >
         <g filter="url(#filter0_d)">
           <path
             d="M314 302.771V0H0V300.372C42.6008 260.309 99.0022 238.203 157.481 238.649C215.959 239.096 272.016 262.061 314 302.771V302.771Z"
-            fill="#422621"
+            fill={props.color}
           />
         </g>
         <defs>

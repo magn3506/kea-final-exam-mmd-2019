@@ -53,7 +53,7 @@ const BarHero = props => {
   return (
     <BarHeroWrapper>
       <BarHeroShapeCon>
-        <BarHeroShape></BarHeroShape>
+        <BarHeroShape color={props.color}></BarHeroShape>
       </BarHeroShapeCon>
       <HBBSymbolTitleContainer>
         <div>
