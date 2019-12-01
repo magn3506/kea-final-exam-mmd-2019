@@ -2,13 +2,18 @@ import React, { Component } from "react"
 import styled, { css } from "styled-components"
 import { colors } from "../../../styles/global-js/colors"
 import DiamondIcon from "../../../../static/icons/diamond.svg"
+import { Link } from "gatsby"
 // import YearIcon from "../../../../static/icons/year.svg"
 
 const siteTitle = props => {
-  const SiteTtileWrapper = styled.div`
+  const SiteTtileWrapper = styled(Link)`
     height: 100%;
     cursor: pointer;
     display: flex;
+    &:hover {
+      cursor: pointer;
+      opacity: 0.8;
+    }
   `
 
   const SiteTitle = styled.div`
@@ -46,8 +51,9 @@ const siteTitle = props => {
     letter-spacing: 2px;
     margin: 0px;
   `
+
   return (
-    <SiteTtileWrapper>
+    <SiteTtileWrapper to={props.siteType ? "/butique" : "/bar"}>
       <SiteTitle>
         {/* <YearCon>
           <img src={YearIcon} alt='year icon'></img>

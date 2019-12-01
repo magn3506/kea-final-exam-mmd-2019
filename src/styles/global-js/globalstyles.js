@@ -12,7 +12,15 @@ export const GlobalStyle = createGlobalStyle`
     background: ${props =>
       props.siteType ? colors.boutiqueBody : colors.barBody};
 
- }   
+ }
+
+    /* REmoves Scroll bar  */
+ ::-webkit-scrollbar {
+ display: none;
+}
+
+
+  
 
  * {
      box-sizing: border-box;

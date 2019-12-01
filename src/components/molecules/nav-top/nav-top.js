@@ -6,6 +6,7 @@ import SiteTitle from "../../atoms/siteTitle/siteTitle"
 import CartIcon from "../../../../static/icons/cart.svg"
 import Logo from "../../../../static/logo_wide.svg"
 import { device } from "../../../styles/global-js/breakpoints"
+import { Link } from "gatsby"
 
 const navTop = props => {
   const TopBar = styled.div`
@@ -48,7 +49,7 @@ const navTop = props => {
     }
   `
 
-  const LogoIconCon = styled.div`
+  const LogoIconCon = styled(Link)`
     width: 120px;
     cursor: pointer;
     display: flex;
@@ -67,11 +68,12 @@ const navTop = props => {
     <Wrapper>
       <TopBar>
         <Burger handleNavOpen={props.handleNavOpen}></Burger>
-        <LogoIconCon>
+        <LogoIconCon to="/">
           <img src={Logo} alt="logo"></img>
         </LogoIconCon>
         <SiteTitle
           titleName={props.siteType ? "Boutique" : "Bar & Cafe"}
+          siteType={props.siteType}
         ></SiteTitle>
         <CartIconCon>
           <img src={CartIcon} alt="cart" />
