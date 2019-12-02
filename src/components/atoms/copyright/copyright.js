@@ -15,6 +15,7 @@ color: white;
 text-align: center;
 padding: 5px 5px 5px 5px;
 margin: 0;
+font-size: 1rem;
 `
 
 const Copyright = props => {

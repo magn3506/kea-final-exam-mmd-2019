@@ -69,7 +69,7 @@ const ProductTilesGrid = props => {
                 title={product.node.title}
                 price={product.node.price}
                 img={product.node.img[0].resize.src}
-                link="/products"
+                link={product.node.slug}
               />
             </ProductGrid>
           ))}
@@ -83,7 +83,7 @@ const ProductTilesGrid = props => {
                 title={product.node.title}
                 price={product.node.price}
                 img={product.node.img[0].resize.src}
-                link="/products"
+                link={product.node.slug}
               />
             </ProductGrid>
           ))}
@@ -97,7 +97,7 @@ const ProductTilesGrid = props => {
                 title={product.node.title}
                 price={product.node.price}
                 img={product.node.img[0].resize.src}
-                link="/products"
+                link={product.node.slug}
               />
             </ProductGrid>
           ))}

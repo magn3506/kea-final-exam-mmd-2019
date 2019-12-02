@@ -11,6 +11,7 @@ const Title = styled.h4`
   color: ${colors.gold};
   font-weight: 600;
   margin-bottom: 0;
+  font-size: 1.2rem;
 `
 const HourBox = styled.div`
 display: flex;

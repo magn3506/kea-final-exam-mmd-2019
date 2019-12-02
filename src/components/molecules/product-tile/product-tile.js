@@ -53,13 +53,14 @@ const ProductTitle = styled.h4`
   font-size: 0.8rem;
   margin-top: 0;
   color: black;
+  width: 100%;
 
   @media ${device.tablet} {
     font-size: 1rem;
   }
 
   @media ${device.laptop} {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 `
 
