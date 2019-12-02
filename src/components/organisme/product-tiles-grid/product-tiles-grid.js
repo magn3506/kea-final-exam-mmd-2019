@@ -46,7 +46,7 @@ const ProductGrid = styled.div``
 const ProductTilesGrid = props => {
 
   const paramsMobile = {
-    slidesPerView: 3.3,
+    slidesPerView: 2.5,
     spaceBetween: 0,
   }
   const paramsTablet = {

@@ -106,7 +106,6 @@ const ButiqueMainPage = ({ data }) => {
   const Heroimage = data.allContentfulAsset.edges[0].node.resize.src;
 
   const [siteType, setSiteType] = useState(true);
-
     return (
       <Layout siteType={siteType}>
         <MainContent>
