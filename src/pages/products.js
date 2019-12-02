@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import Layout from "../components/layout/layout"
 import styled from "styled-components"
 import { StaticQuery, graphql } from "gatsby"
-
+import FilterSearchSortContainer from "../components/molecules/filterSearchSort/filterSearchSort"
 export default props => (
   <StaticQuery
     query={graphql`
@@ -45,7 +45,7 @@ class ProductsPage extends Component {
 
   handleSetSort = sortProp => {
     this.setState({
-     sort : sortProp,
+      sort: sortProp,
       openSort: !this.state.openSort,
     })
   }
@@ -86,59 +86,19 @@ class ProductsPage extends Component {
 
     // STYLED
 
-    const FilterSearchSortContainer = styled.div``
-
-    const FilterTitle = styled.div`
-      cursor: pointer;
-      &:hover {
-        color: red;
-      }
-    `
-    const FilterList = styled.ul`
-      cursor: pointer;
-      li:hover {
-        color: blue;
-      }
-    `
-
-    const SortTitle = styled.div``
-    const SortList = styled.ul``
-
     return (
       <Layout siteType={true}>
         <h1>products page</h1>
-        <FilterSearchSortContainer>
-          <div>Search field</div>
-          <div>
-            <div>
-              <FilterTitle onClick={this.handleOpenFilter}>
-                Filter: {this.state.filter}
-              </FilterTitle>
-              {this.state.openFilter && (
-                <FilterList>
-                  <li onClick={() => this.handleSetFilter("all")}>All</li>
-                  <li onClick={() => this.handleSetFilter("hats")}>Hats</li>
-                  <li onClick={() => this.handleSetFilter("boots")}>Boots</li>
-                </FilterList>
-              )}
-            </div>
-            <div>
-              <SortTitle onClick={this.handleOpenSort}>
-                Sort by {this.state.sort}
-              </SortTitle>
-              {this.state.openSort && (
-                <SortList>
-                  <li onClick={() => this.handleSetSort("lowToHigh")}>
-                    Low To High
-                  </li>
-                  <li onClick={() => this.handleSetSort("highToLow")}>
-                    High To Low
-                  </li>
-                </SortList>
-              )}
-            </div>
-          </div>
-        </FilterSearchSortContainer>
+        <FilterSearchSortContainer
+          handleOpenFilter={this.handleOpenFilter}
+          handleOpenSort={this.handleOpenSort}
+          handleSetFilter={this.handleSetFilter}
+          handleSetSort={this.handleSetSort}
+          openFilter={this.state.openFilter}
+          openSort={this.state.openSort}
+          filter={this.state.filter}
+          sort={this.state.sort}
+        />
 
         {products.map(e => {
           return (

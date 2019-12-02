@@ -59,26 +59,3 @@ const filterSearchSort = props => {
 }
 
 export default filterSearchSort
-
-
-// {
-//   /* <h1>Products Page</h1>
-// {location.state && location.state.filter ? (
-//   <p>{location.state.filter}</p>
-// ) : (
-//   <p>no product added</p>
-// )} */
-// }
-
-
-  //  {/* {products.map(e => {
-  //         return (
-  //           <div>
-  //             <ul>
-  //               <li>{e.node.title}</li>
-  //               <li>{e.node.collection}</li>
-  //               <li>{e.node.price}</li>
-  //             </ul>
-  //           </div>
-  //         )
-  //       })} */}
