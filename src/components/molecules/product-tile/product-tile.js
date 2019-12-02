@@ -5,7 +5,7 @@ import { device } from "../../../styles/global-js/breakpoints"
 import { Link } from "gatsby"
 
 const Wrapper = styled.div`
-  width: 100px;
+  width: 135px;
   margin-left: 5px;
   margin-right: 5px;
   background: white;
