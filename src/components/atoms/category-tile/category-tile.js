@@ -34,8 +34,22 @@ const ImgBox = styled.img`
 const Title = styled.h3`
   color: white;
   position: absolute;
+  z-index: 1;
   left: 10px;
   font-size: 1.2rem;
+`
+
+const Overlay = styled.div`
+width: 100%;
+height: 100%;
+background: rgba(0, 0, 0, 0.35);
+position: absolute;
+transition: .3s;
+z-index: 0;
+
+&:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
 `
 
 const CategoryTile = props => {
@@ -43,6 +57,7 @@ const CategoryTile = props => {
     <Wrapper>
         <Link to="/products" state={{ filter: props.link }}>
           <Title>{props.title}</Title>
+          <Overlay />
           <ImgBox src={props.img} />
         </Link>
     </Wrapper>
