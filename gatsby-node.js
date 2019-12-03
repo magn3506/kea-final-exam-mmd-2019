@@ -51,6 +51,8 @@ exports.createPages = ({ graphql, actions }) => {
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
   const boutiqueProductTemplate = path.resolve(`src/templates/product.js`)
+  const boutiqueProductsTemplate = path.resolve(`src/templates/products.js`)
+
   // Query for markdown nodes to use in creating pages.
   // You can query for whatever data you want to create pages for e.g.
   // products, portfolio items, landing pages, etc.
@@ -63,6 +65,7 @@ exports.createPages = ({ graphql, actions }) => {
             node {
               title
               slug
+              collection
             }
           }
         }
@@ -82,6 +85,26 @@ exports.createPages = ({ graphql, actions }) => {
         component: boutiqueProductTemplate,
         context: {
           slug: edge.node.slug,
+          // Add optional context data to be inserted
+          // as props into the page component..
+          //
+          // The context data can also be used as
+          // arguments to the page GraphQL query.
+          //
+          // The page "path" is always available as a GraphQL
+          // argument.
+        },
+      })
+    })
+
+    // Create product pages.
+    result.data.allContentfulProducts.edges.forEach(edge => {
+      createPage({
+        // Path for this page — required
+        path: `products/${edge.node.collection.toLowerCase()}`,
+        component: boutiqueProductsTemplate,
+        context: {
+          filterBy: edge.node.collection.toLowerCase(),
           // Add optional context data to be inserted
           // as props into the page component..
           //

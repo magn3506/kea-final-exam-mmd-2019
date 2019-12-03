@@ -136,6 +136,15 @@ const filterSearchSort = props => {
                   <li onClick={() => props.handleSetFilter("all")}>All</li>
                   <li onClick={() => props.handleSetFilter("hats")}>Hats</li>
                   <li onClick={() => props.handleSetFilter("boots")}>Boots</li>
+                  <li onClick={() => props.handleSetFilter("clothing")}>
+                    Clothing
+                  </li>
+                  <li onClick={() => props.handleSetFilter("accessories")}>
+                    Accessories
+                  </li>
+                  <li onClick={() => props.handleSetFilter("gifts")}>Gifts</li>
+                  <li onClick={() => props.handleSetFilter("beard")}>Beard</li>
+                  <li onClick={() => props.handleSetFilter("sale")}>Sale</li>
                 </ul>
               </DropDown>
             )}

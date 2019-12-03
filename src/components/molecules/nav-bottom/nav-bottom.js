@@ -291,7 +291,7 @@ const navBottom = props => {
           {props.siteType ? (
             <React.Fragment>
               <Li>
-                <Link to="/products" state={{ filter: "hats" }}>
+                <Link to="/products/hats" state={{ filter: "hats" }}>
                   Hats
                 </Link>
               </Li>
@@ -302,12 +302,18 @@ const navBottom = props => {
                 <div>
                   <ul>
                     <li>
-                      <Link to="/products" state={{ filter: "boots men" }}>
+                      <Link
+                        to="/products/boots"
+                        state={{ filter: "boots men" }}
+                      >
                         The Lad
                       </Link>
                     </li>
                     <li>
-                      <Link to="/products" state={{ filter: "boots women" }}>
+                      <Link
+                        to="/products/boots"
+                        state={{ filter: "boots women" }}
+                      >
                         The Lady
                       </Link>
                     </li>
@@ -315,7 +321,7 @@ const navBottom = props => {
                 </div>
               </Li>
               <Li>
-                <Link to="/products" state={{ filter: "clothing" }}>
+                <Link to="/products/clothing" state={{ filter: "clothing" }}>
                   Clothing
                 </Link>
               </Li>
@@ -326,17 +332,20 @@ const navBottom = props => {
                 <div>
                   <ul>
                     <li>
-                      <Link to="/products" state={{ filter: "gift" }}>
+                      <Link to="/products/gifts" state={{ filter: "gifts" }}>
                         Gifts
                       </Link>
                     </li>
                     <li>
-                      <Link to="products" state={{ filter: "accesories" }}>
+                      <Link
+                        to="products/accessories"
+                        state={{ filter: "accessories" }}
+                      >
                         Accesories
                       </Link>
                     </li>
                     <li>
-                      <Link to="/products" state={{ filter: "beard" }}>
+                      <Link to="/products/beard" state={{ filter: "beard" }}>
                         Beard
                       </Link>
                     </li>
@@ -344,7 +353,7 @@ const navBottom = props => {
                 </div>
               </Li>
               <Li>
-                <Link to="/products" state={{ filter: "sale" }}>
+                <Link to="/products/sale" state={{ filter: "sale" }}>
                   Sale
                 </Link>
               </Li>
