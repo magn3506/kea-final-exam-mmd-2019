@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
 
 import Layout from "../components/layout/layout"
@@ -28,8 +28,8 @@ export const query = graphql`
   }
 `
 const MainContent = styled.div`
-max-width: 1024px;
-margin: 0 auto;
+  max-width: 1024px;
+  margin: 0 auto;
 `
 
 const BackSection = styled.div`
@@ -103,23 +103,43 @@ const BackText = styled.p`
 const ImageCon = styled.div`
   display: flex;
   justify-content: center;
+  flex-direction: column-reverse;
 
   @media ${device.tablet} {
     align-items: initial;
     background: ${colors.darkGrade};
+    flex-direction: row;
   }
 
   @media ${device.laptop} {
     align-items: center;
     background: ${colors.darkGrade};
+    flex-direction: row;
+  }
+`
+
+const MobileGalleryIcon = styled.div`
+  width: 15px;
+  height: 15px;
+  border-radius: 100%;
+  background: ${colors.gold};
+  margin: 7px 10px 7px 10px;
+
+  @media ${device.tablet} {
+    display: none;
+  }
+
+  @media ${device.laptop} {
+    display: none;
   }
 `
 
 const GalleryImagesCon = styled.div`
-  display: none;
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
 
   @media ${device.tablet} {
-    display: flex;
     display: flex;
     flex-direction: column;
     align-self: baseline;
@@ -135,27 +155,44 @@ const GalleryImagesCon = styled.div`
 `
 
 const GalleryImage = styled.img`
-width: 50px;
-height: 50px;
-margin: 0 10px 7px 10px;
-cursor: pointer;
-transition: .3s;
+  width: 50px;
+  height: 50px;
+  margin: 0 10px 7px 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  display: none;
 
-&:hover {
-  opacity: .8;
-}
+  &:hover {
+    opacity: 0.8;
+  }
+
+  @media ${device.tablet} {
+    display: block;
+    border-radius: 0;
+    width: 50px;
+    height: 50px;
+    margin: 0 10px 7px 10px;
+  }
+
+  @media ${device.laptop} {
+    display: block;
+    border-radius: 0;
+    width: 50px;
+    height: 50px;
+    margin: 0 10px 7px 10px;
+  }
 `
 
 const ShownImage = styled.img`
-    @media ${device.tablet} {
-      width: 350px;
-      height: 350px;
-    }
+  @media ${device.tablet} {
+    width: 350px;
+    height: 350px;
+  }
 
-    @media ${device.laptop} {
-      width: 400px;
-      height: 400px;
-    }
+  @media ${device.laptop} {
+    width: 400px;
+    height: 400px;
+  }
 `
 
 const Title = styled.h1`
@@ -168,7 +205,6 @@ const Title = styled.h1`
   }
 
   @media ${device.laptop} {
-
   }
 `
 
@@ -181,7 +217,6 @@ const Price = styled.h1`
   }
 
   @media ${device.laptop} {
-
   }
 `
 const ShippingLink = styled.p`
@@ -195,7 +230,6 @@ const ShippingLink = styled.p`
   }
 
   @media ${device.laptop} {
-
   }
 
   a {
@@ -248,18 +282,18 @@ const DescriptionText = styled.p`
 
   & p {
     @media ${device.tablet} {
-    font-size: 0.9rem;
-    line-height: 1.3rem;
-  }
+      font-size: 0.9rem;
+      line-height: 1.3rem;
+    }
 
-  @media ${device.laptop} {
-    font-size: 1rem;
-  }
+    @media ${device.laptop} {
+      font-size: 1rem;
+    }
   }
 `
 
 const ProductInfoCon = styled.div`
-      @media ${device.laptop} {
+  @media ${device.laptop} {
     width: 400px;
   }
 `
@@ -292,44 +326,88 @@ const ProductInfoTextCon = styled.div`
 const Product = props => {
   const { title, img, price } = props.data.contentfulProducts
 
+  const [galleryMainImage, setGalleryMainImage] = useState(0)
+
   return (
     <Layout siteType={true}>
       <MainContent>
-      <BackSection>
-        <BackText><Link to="/products">Back</Link></BackText>
-        <Logo src={BoutiqueLogo} />
-      </BackSection>
-      <ProductWrapper>
-        <ImageCon>
-          <GalleryImagesCon>
-            <GalleryImage src={img[0].resize.src}/>
-            <GalleryImage src={img[0].resize.src}/>
-            <GalleryImage src={img[0].resize.src}/>
-            <GalleryImage src={img[0].resize.src}/>
-          </GalleryImagesCon>
-          <ShownImage src={img[0].resize.src} />
-        </ImageCon>
-        <ProductInfoCon>
-          <ProductInfoTextCon>
-          <Title>{title}</Title>
-          <Price>{price}</Price>
-          <ShippingLink>
-            <Link to="/shipping-return">Shipping and returns policy</Link>
-          </ShippingLink>
-          </ProductInfoTextCon>
-          <PaymentFields />
-          <DeliveryReturnCTA />
-        </ProductInfoCon>
-      </ProductWrapper>
-      <DescriptionCon>
-        <Bar />
-        <DescriptionTitle>Description</DescriptionTitle>
-        <DescriptionText>
-          {documentToReactComponents(
-            props.data.contentfulProducts.description.json
-          )}
-        </DescriptionText>
-      </DescriptionCon>
+        <BackSection>
+          <BackText>
+            <Link to="/products">Back</Link>
+          </BackText>
+          <Logo src={BoutiqueLogo} />
+        </BackSection>
+        <ProductWrapper>
+          <ImageCon>
+            <GalleryImagesCon>
+              <GalleryImage
+                onClick={() => {
+                  setGalleryMainImage(0)
+                }}
+                src={img[0].resize.src}
+              />
+              <GalleryImage
+                onClick={() => {
+                  setGalleryMainImage(1)
+                }}
+                src={img[1].resize.src}
+              />
+              <GalleryImage
+                onClick={() => {
+                  setGalleryMainImage(2)
+                }}
+                src={img[2].resize.src}
+              />
+              <GalleryImage
+                onClick={() => {
+                  setGalleryMainImage(0)
+                }}
+                src={img[0].resize.src}
+              />
+              <MobileGalleryIcon
+                onClick={() => {
+                  setGalleryMainImage(0)
+                }}
+              />
+              <MobileGalleryIcon
+                onClick={() => {
+                  setGalleryMainImage(1)
+                }}
+              />
+              <MobileGalleryIcon
+                onClick={() => {
+                  setGalleryMainImage(2)
+                }}
+              />
+              <MobileGalleryIcon
+                onClick={() => {
+                  setGalleryMainImage(0)
+                }}
+              />
+            </GalleryImagesCon>
+            <ShownImage src={img[galleryMainImage].resize.src} />
+          </ImageCon>
+          <ProductInfoCon>
+            <ProductInfoTextCon>
+              <Title>{title}</Title>
+              <Price>{price}</Price>
+              <ShippingLink>
+                <Link to="/shipping-return">Shipping and returns policy</Link>
+              </ShippingLink>
+            </ProductInfoTextCon>
+            <PaymentFields />
+            <DeliveryReturnCTA />
+          </ProductInfoCon>
+        </ProductWrapper>
+        <DescriptionCon>
+          <Bar />
+          <DescriptionTitle>Description</DescriptionTitle>
+          <DescriptionText>
+            {documentToReactComponents(
+              props.data.contentfulProducts.description.json
+            )}
+          </DescriptionText>
+        </DescriptionCon>
       </MainContent>
     </Layout>
   )
