@@ -39,7 +39,12 @@ const ContainerDesktop = styled.div`
   }
 `
 
-const SwiperGrid = styled(Swiper)``
+const SwiperGrid = styled(Swiper)`
+  &:first-child {
+    z-index: 0 !important;
+    background: red;
+  }
+`
 
 const ProductGrid = styled.div``
 

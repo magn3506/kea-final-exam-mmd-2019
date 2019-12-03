@@ -6,6 +6,7 @@ import { device } from "../../styles/global-js/breakpoints"
 
 import Footer from "../organisme/footer/footer"
 import SwitchSection from "../molecules/switchSection/switchSection"
+import SwitchMobile from "../atoms/switch-mobile/switch-mobile"
 
 const Layout = props => {
   const TopSpacerModule = styled.div`
@@ -23,6 +24,7 @@ const Layout = props => {
       <TopSpacerModule />
       {props.children}
       <SwitchSection siteType={props.siteType} />
+      <SwitchMobile siteType={props.siteType} />
       <Footer siteType={props.siteType} />
     </div>
   )
