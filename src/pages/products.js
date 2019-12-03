@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import Layout from "../components/layout/layout"
 import styled from "styled-components"
 import { StaticQuery, graphql } from "gatsby"
+import ProductGallery from "../components/organisme/product-gallery/product-gallery"
 import FilterSearchSortContainer from "../components/molecules/filterSearchSort/filterSearchSort"
 export default props => (
   <StaticQuery
@@ -13,6 +14,13 @@ export default props => (
               title
               collection
               price
+              slug
+              id
+              img {
+                resize(width: 200, height: 200) {
+                  src
+                }
+              }
             }
           }
         }
@@ -50,6 +58,17 @@ class ProductsPage extends Component {
     })
   }
 
+  // componentDidUpdate() {
+  //   if (this.props.location.state && this.props.location.state.filter) {
+  //     this.setState({
+  //       filter: this.props.location.state.filter,
+  //     })
+  //     console.log("Hello")
+  //   } else {
+  //     console.log("no succes")
+  //   }
+  // }
+
   render() {
     const { location } = this.props
     const data = this.props.data
@@ -84,11 +103,47 @@ class ProductsPage extends Component {
       })
     }
 
+    console.log(products)
+
     // STYLED
+
+    const ProductGalleryContainer = styled.div`
+      max-width: 1024px;
+      margin: 0 auto;
+    `
+    const SpacerModule = styled.div`
+      max-width: 1024px;
+      margin: 0 auto;
+      height: 50px;
+    `
+
+    const ProductPageHero = styled.div`
+      max-width: 1024px;
+      margin: 40px auto;
+      height: 100px;
+      background: black;
+      display: flex;
+      color: white;
+      h1 {
+        color: white;
+        width: 100%;
+        text-align: center;
+        padding: 20px;
+      }
+    `
 
     return (
       <Layout siteType={true}>
-        <h1>products page</h1>
+        <ProductPageHero>
+          <h1>
+            Products Page
+            {location.state && location.state.filter ? (
+              <p>{location.state.filter}</p>
+            ) : (
+              <p>no product added</p>
+            )}
+          </h1>
+        </ProductPageHero>
         <FilterSearchSortContainer
           handleOpenFilter={this.handleOpenFilter}
           handleOpenSort={this.handleOpenSort}
@@ -99,18 +154,11 @@ class ProductsPage extends Component {
           filter={this.state.filter}
           sort={this.state.sort}
         />
+        <ProductGalleryContainer>
+          <SpacerModule />
 
-        {products.map(e => {
-          return (
-            <div>
-              <ul>
-                <li>{e.node.title}</li>
-                <li>{e.node.collection}</li>
-                <li>{e.node.price}</li>
-              </ul>
-            </div>
-          )
-        })}
+          <ProductGallery products={products}></ProductGallery>
+        </ProductGalleryContainer>
       </Layout>
     )
   }

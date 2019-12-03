@@ -7,6 +7,7 @@ import { device } from "../../../styles/global-js/breakpoints"
 
 const Wrapper = styled.div`
   width: 100%;
+  margin: 0 auto;
 
   @media ${device.tablet} {
     width: 100%;
@@ -18,25 +19,28 @@ const Wrapper = styled.div`
 `
 
 const Container = styled.div`
-display: flex;
-flex-direction: row;
-flex-wrap: wrap;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
 `
 
 const ProductGallery = ({ products }) => {
   return (
     <Wrapper>
-        <Container>
-        {products.edges.map(product => (
-        <ProductTile
-          title={product.node.title}
-          price={product.node.pricing}
-          img={product.node.img[0].resize.src}
-          link={product.node.slug}
-          key={product.node.id}
-        />
-      ))}
-        </Container>
+      <Container>
+        {products.map(product => (
+          <ProductTile
+            title={product.node.title}
+            price={product.node.price}
+            img={product.node.img[0].resize.src}
+            link={product.node.slug}
+            key={product.node.id}
+          />
+        ))}
+      </Container>
     </Wrapper>
   )
 }
