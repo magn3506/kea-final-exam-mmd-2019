@@ -25,6 +25,8 @@ const Container = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
+  z-index: -2;
+  position: relative;
 `
 
 const ProductGallery = ({ products }) => {

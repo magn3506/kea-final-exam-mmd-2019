@@ -9,6 +9,8 @@ const filterSearchSort = props => {
     padding: 10px;
     display: flex;
     flex-wrap: wrap;
+    position: relative;
+    z-index: 0;
     border-bottom: 5px solid ${colors.gold};
     justify-content: center;
     @media (min-width: 600px) {
@@ -62,12 +64,12 @@ const filterSearchSort = props => {
     height: 40px;
     display: flex;
     align-items: center;
-    z-index: 1;
+    z-index: 0;
     position: relative;
   `
   const DropDown = styled.div`
     position: relative;
-    z-index: 0;
+    z-index: -1;
 
     ul {
       position: absolute;
@@ -111,7 +113,7 @@ const filterSearchSort = props => {
     height: 40px;
     display: flex;
     align-items: center;
-    z-index: 1;
+    z-index: 0;
     position: relative;
   `
 

@@ -61,6 +61,9 @@ const EventsPage = () => {
     width: 100%;
     margin-bottom: 100px;
   `
+  const customStyles = {
+    zIndex: "9999999",
+  }
 
   return (
     <Layout siteType={false}>

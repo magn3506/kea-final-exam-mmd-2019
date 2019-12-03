@@ -11,12 +11,12 @@ const Wrapper = styled.div`
 const ContainerMobile = styled.div`
   display: flex;
   flex-direction: row;
-  
+
   @media (min-width: 600px) {
-   display: none;
+    display: none;
   }
   @media (min-width: 768px) {
-   display: none;
+    display: none;
   }
 `
 const ContainerTablet = styled.div`
@@ -27,29 +27,23 @@ const ContainerTablet = styled.div`
     flex-direction: row;
   }
   @media (min-width: 1024px) {
-   display: none;
+    display: none;
   }
 `
 const ContainerDesktop = styled.div`
   display: none;
 
   @media (min-width: 1024px) {
-  display: flex;
-  flex-direction: row;
+    display: flex;
+    flex-direction: row;
   }
 `
 
-const SwiperGrid = styled(Swiper)`
-  &:first-child {
-    z-index: 0 !important;
-    background: red;
-  }
-`
+const SwiperGrid = styled(Swiper)``
 
 const ProductGrid = styled.div``
 
 const ProductTilesGrid = props => {
-
   const paramsMobile = {
     slidesPerView: 2.5,
     spaceBetween: 0,
@@ -68,7 +62,7 @@ const ProductTilesGrid = props => {
     <Wrapper>
       <ContainerMobile>
         <SwiperGrid {...paramsMobile}>
-        {props.products.map(product => (
+          {props.products.map(product => (
             <ProductGrid key={product.node.id}>
               <ProductTile
                 title={product.node.title}
@@ -82,7 +76,7 @@ const ProductTilesGrid = props => {
       </ContainerMobile>
       <ContainerTablet>
         <SwiperGrid {...paramsTablet}>
-        {props.products.map(product => (
+          {props.products.map(product => (
             <ProductGrid key={product.node.id}>
               <ProductTile
                 title={product.node.title}
@@ -96,7 +90,7 @@ const ProductTilesGrid = props => {
       </ContainerTablet>
       <ContainerDesktop>
         <SwiperGrid {...paramsDesktop}>
-        {props.products.map(product => (
+          {props.products.map(product => (
             <ProductGrid key={product.node.id}>
               <ProductTile
                 title={product.node.title}

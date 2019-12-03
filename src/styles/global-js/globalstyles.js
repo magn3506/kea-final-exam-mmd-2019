@@ -14,6 +14,10 @@ export const GlobalStyle = createGlobalStyle`
 
  }
 
+
+.swiper-container	{
+  z-index: -5 !important;
+}
     /* REmoves Scroll bar  */
  ::-webkit-scrollbar {
  display: none;

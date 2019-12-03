@@ -19,7 +19,7 @@ export class nav extends Component {
   render() {
     const Header = styled.header`
       position: fixed;
-      z-index: 2;
+      z-index: 1;
     `
 
     return (
@@ -35,7 +35,9 @@ export class nav extends Component {
             handleNavOpen={this.handleNavOpen}
           ></NavBottom>
         </nav>
-       {this.state.navOpen === false && <SwitchMobile siteType={this.props.siteType} />} 
+        {this.state.navOpen === false && (
+          <SwitchMobile siteType={this.props.siteType} />
+        )}
       </Header>
     )
   }
