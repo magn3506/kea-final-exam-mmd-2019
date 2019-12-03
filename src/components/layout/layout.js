@@ -24,7 +24,6 @@ const Layout = props => {
       <TopSpacerModule />
       {props.children}
       <SwitchSection siteType={props.siteType} />
-      <SwitchMobile siteType={props.siteType} />
       <Footer siteType={props.siteType} />
     </div>
   )
