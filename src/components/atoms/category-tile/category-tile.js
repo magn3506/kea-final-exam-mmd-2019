@@ -41,10 +41,13 @@ const Title = styled.h3`
 const CategoryTile = props => {
   return (
     <Wrapper>
-        <Link to="/products" state={{ filter: props.link }}>
-          <Title>{props.title}</Title>
-          <ImgBox src={props.img} />
-        </Link>
+      <Link
+        to={`products/${props.title.toLowerCase()}`}
+        state={{ filter: props.link }}
+      >
+        <Title>{props.title}</Title>
+        <ImgBox src={props.img} />
+      </Link>
     </Wrapper>
   )
 }
