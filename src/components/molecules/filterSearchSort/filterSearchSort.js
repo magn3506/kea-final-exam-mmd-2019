@@ -6,7 +6,7 @@ const filterSearchSort = props => {
   const FilterSearchSortContainer = styled.div`
     max-width: 1024px;
     margin: 0 auto;
-    padding-bottom: -5px;
+    padding: 10px;
     display: flex;
     flex-wrap: wrap;
     border-bottom: 5px solid ${colors.gold};
@@ -20,13 +20,16 @@ const filterSearchSort = props => {
     min-width: 300px;
     padding: 10px;
     @media (min-width: 600px) {
-      padding: 20px 0px 0px 10px;
+      padding: 15px 0px 0px 0px;
     }
   `
   const Search = styled.input`
     width: 100%;
     padding: 10px;
     border-radius: 5px;
+    height: 40px;
+    border: 0px solid transparent;
+    color: ${colors.grey};
   `
   const FilterSortContainer = styled.div`
     display: flex;
