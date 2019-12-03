@@ -2,70 +2,125 @@ import React, { Component } from "react"
 import Layout from "../components/layout/layout"
 import styled from "styled-components"
 import { StaticQuery, graphql } from "gatsby"
-
-
+import FilterSearchSortContainer from "../components/molecules/filterSearchSort/filterSearchSort"
 export default props => (
-  <StaticQuery 
-  query={
-    graphql`
-    query {
-      allContentfulProducts(sort: { fields: title, order: DESC }) {
-        edges {
-          node {
-            title
-            price
-            img {
-              resize(width: 300, height: 300) {
-                src
-              }
+  <StaticQuery
+    query={graphql`
+      query {
+        allContentfulProducts {
+          edges {
+            node {
+              title
+              collection
+              price
             }
-            id
-            slug
           }
         }
       }
-      allContentfulCollectionTeaser {
-        edges {
-          node {
-            title
-            collectionImage {
-              resize(width: 300, height: 300) {
-                src
-              }
-            }
-            filter
-          }
-        }
-      }
-    }
     `}
-    render={data => <ProductsPage data={data} {...props}  />}
-    />
+    render={data => <ProductsPage data={data} {...props} />}
+  />
 )
 
+class ProductsPage extends Component {
+  state = {
+    filter: "all",
+    openFilter: false,
+    sort: "lowToHigh",
+    openSort: false,
+  }
 
-const ProductsPage = ({ location, data }) => {
-  const MainContentTestRemoveMe = styled.div`
-    max-width: 1000px;
-    margin: 0 auto;
-    background: grey;
-    height: 200vh;
-    text-align: center;
-    font-size: 2em;
-    padding-top: 50px;
-  `
-  console.log(data);
+  handleOpenFilter = () => {
+    this.setState({ openFilter: !this.state.openFilter })
+  }
+  handleOpenSort = () => {
+    this.setState({ openSort: !this.state.openSort })
+  }
+  handleSetFilter = filterProp => {
+    this.setState({
+      filter: filterProp,
+      openFilter: !this.state.openFilter,
+    })
+  }
 
-  return (
-    <Layout siteType={true}>
-      <MainContentTestRemoveMe>
-        <h1>Products Page</h1>
-        {location.state && location.state.filter ? (
-          <p>{location.state.filter}</p>
-        ) : (
-          <p>no product added</p>
-        )}
-      </MainContentTestRemoveMe>
-    </Layout>
-  )
+  handleSetSort = sortProp => {
+    this.setState({
+      sort: sortProp,
+      openSort: !this.state.openSort,
+    })
+  }
+
+  render() {
+    const { location } = this.props
+    const data = this.props.data
+
+    let productsArr = data.allContentfulProducts.edges
+
+    let products
+
+    // FILTER
+    if (this.state.filter == "all") {
+      products = productsArr
+    } else {
+      let filter = this.state.filter
+      products = productsArr.filter(function(e) {
+        return e.node.collection.toLowerCase() == filter
+      })
+    }
+
+    // SORTING LOW-Price TO HIGH-Price
+
+    if (this.state.sort === "lowToHigh") {
+      products = products.sort(function(a, b) {
+        let A = parseFloat(a.node.price.replace(",", "").replace(".", ""))
+        let B = parseFloat(b.node.price.replace(",", "").replace(".", ""))
+        return A - B
+      })
+    } else if (this.state.sort === "highToLow") {
+      products = products.sort(function(a, b) {
+        let A = parseFloat(a.node.price.replace(",", "").replace(".", ""))
+        let B = parseFloat(b.node.price.replace(",", "").replace(".", ""))
+        return B - A
+      })
+    }
+
+    // STYLED
+
+    return (
+      <Layout siteType={true}>
+        <h1>products page</h1>
+        <FilterSearchSortContainer
+          handleOpenFilter={this.handleOpenFilter}
+          handleOpenSort={this.handleOpenSort}
+          handleSetFilter={this.handleSetFilter}
+          handleSetSort={this.handleSetSort}
+          openFilter={this.state.openFilter}
+          openSort={this.state.openSort}
+          filter={this.state.filter}
+          sort={this.state.sort}
+        />
+
+        {products.map(e => {
+          return (
+            <div>
+              <ul>
+                <li>{e.node.title}</li>
+                <li>{e.node.collection}</li>
+                <li>{e.node.price}</li>
+              </ul>
+            </div>
+          )
+        })}
+      </Layout>
+    )
+  }
+}
+
+{
+  /* <h1>Products Page</h1>
+{location.state && location.state.filter ? (
+  <p>{location.state.filter}</p>
+) : (
+  <p>no product added</p>
+)} */
 }
