@@ -2,7 +2,6 @@ import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 import { colors } from "../../../styles/global-js/colors"
-import { device } from "../../../styles/global-js/breakpoints"
 
 const eventItem = props => {
   const { title, shortDescription, date, slug, time } = props.data

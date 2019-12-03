@@ -1,6 +1,6 @@
 import NavTop from "../../molecules/nav-top/nav-top"
 import NavBottom from "../../molecules/nav-bottom/nav-bottom"
-import styled, { css } from "styled-components"
+import styled from "styled-components"
 import SwitchMobile from "../../atoms/switch-mobile/switch-mobile"
 
 import React, { Component } from "react"

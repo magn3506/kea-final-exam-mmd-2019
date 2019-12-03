@@ -1,5 +1,5 @@
-import React, { Component } from "react"
-import styled, { css } from "styled-components"
+import React from "react"
+import styled from "styled-components"
 import { colors } from "../../../styles/global-js/colors"
 import DiamondIcon from "../../../../static/icons/diamond.svg"
 import { Link } from "gatsby"
@@ -28,15 +28,6 @@ const siteTitle = props => {
       width: 100%;
     }
   `
-  // const YearCon = styled.div`
-  //   width: 27px;
-  //   display: flex;
-  //   margin-right: 0;
-  //   transform: translateX(-5px);
-  //   img {
-  //     width: 100%;
-  //   }
-  // `
 
   const H1 = styled.h1`
     font-size: 20px;
@@ -55,9 +46,6 @@ const siteTitle = props => {
   return (
     <SiteTtileWrapper to={props.siteType ? "/butique" : "/bar"}>
       <SiteTitle>
-        {/* <YearCon>
-          <img src={YearIcon} alt='year icon'></img>
-        </YearCon> */}
         <DiamondCon>
           <img src={DiamondIcon} alt="diamond icon" />
         </DiamondCon>

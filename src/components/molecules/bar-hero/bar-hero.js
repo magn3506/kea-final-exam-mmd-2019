@@ -1,6 +1,5 @@
 import React from "react"
 import styled from "styled-components"
-import { colors } from "../../../styles/global-js/colors"
 import BarHeroShape from "../../atoms/shapes/barHeroShape/barHeroShape"
 import HBBSymbolTitleSVG from "../../atoms/hbb-symbol-title/hbb-symbol-title"
 import LeavesSVG from "../../atoms/icons/leaves/leavesSVG"

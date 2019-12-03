@@ -1,6 +1,5 @@
 import styled from "styled-components"
 import { colors } from "../../../styles/global-js/colors"
-import { device } from "../../../styles/global-js/breakpoints"
 import { graphql, useStaticQuery } from "gatsby"
 import React from "react"
 

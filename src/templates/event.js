@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 
 import Layout from "../components/layout/layout"
-import { Link, graphql, useStaticQuery } from "gatsby"
+import { graphql } from "gatsby"
 import { colors } from "../styles/global-js/colors"
 import { device } from "../styles/global-js/breakpoints"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
