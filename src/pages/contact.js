@@ -22,9 +22,9 @@ const AboutPage = () => {
   const Wrapper = styled.div`
     max-width: 1024px;
     margin: 0px auto;
-    background: ${colors.grey};
+
     padding: 25px;
-    box-shadow: ${colors.NavBoxShadow};
+
     @media ${device.laptop} {
       padding: 100px 0px;
       margin: 0px auto 50px auto;
@@ -38,12 +38,9 @@ const AboutPage = () => {
     margin: 0 auto;
     width: 100%;
 
-    hr {
-      border-top: 1px solid ${colors.gold};
-    }
-
     p {
       letter-spacing: 0.3px;
+      color: ${colors.grey};
     }
     h1,
     h2,

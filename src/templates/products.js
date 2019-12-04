@@ -4,6 +4,8 @@ import styled from "styled-components"
 import { StaticQuery, graphql } from "gatsby"
 import ProductGallery from "../components/organisme/product-gallery/product-gallery"
 import FilterSearchSortContainer from "../components/molecules/filterSearchSort/filterSearchSort"
+import { colors } from "../styles/global-js/colors"
+import { device } from "../styles/global-js/breakpoints"
 export default props => (
   <StaticQuery
     query={graphql`
@@ -21,6 +23,13 @@ export default props => (
                   src
                 }
               }
+            }
+          }
+        }
+        contentfulProductsHeroImage {
+          image {
+            fluid {
+              src
             }
           }
         }
@@ -114,32 +123,61 @@ class ProductsPage extends Component {
       height: 50px;
     `
 
+    const HeroImage = data.contentfulProductsHeroImage.image.fluid.src
     const ProductPageHero = styled.div`
       max-width: 1024px;
-      margin: 40px auto;
-      height: 100px;
+      margin: 0px auto 50px auto;
+      height: 150px;
       background: black;
       display: flex;
       color: white;
-      h1 {
-        color: white;
+      background-image: url(${HeroImage});
+      background-size: 110%;
+      background-position: 0px;
+      position: relative;
+      background-repeat: no-repeat;
+      z-index: -1;
+      ::after {
+        content: " ";
         width: 100%;
-        text-align: center;
-        padding: 20px;
+        height: 100%;
+        position: absolute;
+        background-color: ${colors.gold};
+        opacity: 0.2;
+        z-index: -1;
+      }
+      @media ${device.laptop} {
+        height: 200px;
+      }
+    `
+
+    const Title = styled.h1`
+      text-transform: uppercase;
+      margin: 50px auto;
+      text-align: center;
+      font-size: 30px;
+      background-color: black;
+      position: relative;
+      z-index: 0;
+      width: 100%;
+      font-weight: 900;
+      letter-spacing: 3px;
+      display: flex;
+      align-self: center;
+      justify-content: center;
+      padding: 10px;
+      color: ${colors.gold};
+
+      @media ${device.laptop} {
+        font-size: 40px;
+        margin: 75px auto;
       }
     `
 
     return (
       <Layout siteType={true}>
         <ProductPageHero>
-          <h1>
-            Products Page
-            {location.state && location.state.filter ? (
-              <p>{location.state.filter}</p>
-            ) : (
-              <p>no product added</p>
-            )}
-          </h1>
+          <Title> {this.props.pageContext.filterBy}</Title>
         </ProductPageHero>
         <FilterSearchSortContainer
           handleOpenFilter={this.handleOpenFilter}
