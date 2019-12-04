@@ -15,7 +15,6 @@ const navTop = props => {
     padding: 5px 10px;
     display: flex;
     box-sizing: border-box;
-    display: flex;
     justify-content: space-between;
     max-width: 1024px;
     margin: 0 auto;
