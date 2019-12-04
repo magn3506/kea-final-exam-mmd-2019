@@ -16,7 +16,7 @@ export const GlobalStyle = createGlobalStyle`
 
 
 .swiper-container	{
-  z-index: -5 !important;
+  z-index: 0 !important;
 }
     /* REmoves Scroll bar  */
  ::-webkit-scrollbar {

@@ -9,8 +9,7 @@ const filterSearchSort = props => {
     padding: 10px;
     display: flex;
     flex-wrap: wrap;
-    position: relative;
-    z-index: 0;
+
     border-bottom: 5px solid ${colors.gold};
     justify-content: center;
     @media (min-width: 600px) {
@@ -64,12 +63,14 @@ const filterSearchSort = props => {
     height: 40px;
     display: flex;
     align-items: center;
-    z-index: 0;
-    position: relative;
+    cursor: pointer;
+    &:hover {
+      opacity: 0.8;
+    }
   `
   const DropDown = styled.div`
     position: relative;
-    z-index: -1;
+    z-index: 0;
 
     ul {
       position: absolute;
@@ -77,7 +78,7 @@ const filterSearchSort = props => {
       margin: 0;
       font-size: 12px;
       width: 100%;
-      top: -10px;
+      top: -0px;
       background-color: ${colors.dark};
       li {
         padding: 0;
@@ -89,6 +90,8 @@ const filterSearchSort = props => {
         &:hover {
           background: ${colors.gold};
           color: ${colors.dark};
+          cursor: pointer;
+          font-weight: 900;
         }
       }
     }
@@ -115,6 +118,10 @@ const filterSearchSort = props => {
     align-items: center;
     z-index: 0;
     position: relative;
+    cursor: pointer;
+    &:hover {
+      opacity: 0.8;
+    }
   `
 
   return (

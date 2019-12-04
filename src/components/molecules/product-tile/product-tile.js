@@ -10,10 +10,14 @@ const Wrapper = styled.div`
   margin-right: 5px;
   background: white;
   margin-bottom: 30px;
-  transition: 0.3s;
+  transition: 0.2s;
 
   &:hover {
-    opacity: 0.8;
+    opacity: 1;
+    box-shadow: ${colors.NavBoxShadow};
+    border: 5px solid ${colors.red};
+    border-radius: 10px;
+    overflow: hidden;
   }
 
   @media ${device.tablet} {
