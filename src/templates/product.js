@@ -6,6 +6,8 @@ import { colors } from "../styles/global-js/colors"
 import { device } from "../styles/global-js/breakpoints"
 import { Link } from "gatsby"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
+import "react-image-gallery/styles/css/image-gallery.css"
+import ImageGallery from "react-image-gallery"
 
 import BoutiqueLogo from "../../static/Boutique-logo.png"
 import PaymentFields from "../components/molecules/paymentFields/paymentFields"
@@ -16,7 +18,7 @@ export const query = graphql`
     contentfulProducts(slug: { eq: $slug }) {
       title
       img {
-        resize(width: 300, height: 300) {
+        resize(width: 400, height: 400) {
           src
         }
       }
@@ -30,6 +32,14 @@ export const query = graphql`
 const MainContent = styled.div`
   max-width: 1024px;
   margin: 0 auto;
+
+  .thumbnail {
+    width: 50px;
+  }
+
+  .thumbnail.active {
+    border: 3px solid ${colors.gold};
+  }
 `
 
 const BackSection = styled.div`
@@ -115,71 +125,6 @@ const ImageCon = styled.div`
     align-items: center;
     background: ${colors.darkGrade};
     flex-direction: row;
-  }
-`
-
-const MobileGalleryIcon = styled.div`
-  width: 15px;
-  height: 15px;
-  border-radius: 100%;
-  background: ${colors.gold};
-  margin: 7px 10px 7px 10px;
-
-  @media ${device.tablet} {
-    display: none;
-  }
-
-  @media ${device.laptop} {
-    display: none;
-  }
-`
-
-const GalleryImagesCon = styled.div`
-  display: flex;
-  justify-content: center;
-  margin-top: 5px;
-
-  @media ${device.tablet} {
-    display: flex;
-    flex-direction: column;
-    align-self: baseline;
-    margin-top: 10px;
-  }
-
-  @media ${device.laptop} {
-    display: flex;
-    flex-direction: column;
-    align-self: baseline;
-    margin-top: 10px;
-  }
-`
-
-const GalleryImage = styled.img`
-  width: 50px;
-  height: 50px;
-  margin: 0 10px 7px 10px;
-  cursor: pointer;
-  transition: 0.3s;
-  display: none;
-
-  &:hover {
-    opacity: 0.8;
-  }
-
-  @media ${device.tablet} {
-    display: block;
-    border-radius: 0;
-    width: 50px;
-    height: 50px;
-    margin: 0 10px 7px 10px;
-  }
-
-  @media ${device.laptop} {
-    display: block;
-    border-radius: 0;
-    width: 50px;
-    height: 50px;
-    margin: 0 10px 7px 10px;
   }
 `
 
@@ -323,10 +268,21 @@ const ProductInfoTextCon = styled.div`
   }
 `
 
+const ImageGalleryDesktop = styled(ImageGallery)``
+
 const Product = props => {
   const { title, img, price } = props.data.contentfulProducts
 
-  const [galleryMainImage, setGalleryMainImage] = useState(0)
+  let images = []
+
+  img.map(img => {
+    let obj = {
+      original: img.resize.src,
+      thumbnail: img.resize.src,
+      thumbnailClass: "thumbnail",
+    }
+    images.push(obj)
+  })
 
   return (
     <Layout siteType={true}>
@@ -339,53 +295,13 @@ const Product = props => {
         </BackSection>
         <ProductWrapper>
           <ImageCon>
-            <GalleryImagesCon>
-              <GalleryImage
-                onClick={() => {
-                  setGalleryMainImage(0)
-                }}
-                src={img[0].resize.src}
-              />
-              <GalleryImage
-                onClick={() => {
-                  setGalleryMainImage(1)
-                }}
-                src={img[1].resize.src}
-              />
-              <GalleryImage
-                onClick={() => {
-                  setGalleryMainImage(2)
-                }}
-                src={img[2].resize.src}
-              />
-              <GalleryImage
-                onClick={() => {
-                  setGalleryMainImage(0)
-                }}
-                src={img[0].resize.src}
-              />
-              <MobileGalleryIcon
-                onClick={() => {
-                  setGalleryMainImage(0)
-                }}
-              />
-              <MobileGalleryIcon
-                onClick={() => {
-                  setGalleryMainImage(1)
-                }}
-              />
-              <MobileGalleryIcon
-                onClick={() => {
-                  setGalleryMainImage(2)
-                }}
-              />
-              <MobileGalleryIcon
-                onClick={() => {
-                  setGalleryMainImage(0)
-                }}
-              />
-            </GalleryImagesCon>
-            <ShownImage src={img[galleryMainImage].resize.src} />
+            <ImageGalleryDesktop
+              items={images}
+              showNav={false}
+              showPlayButton={false}
+              showFullscreenButton={false}
+              lazyLoad={true}
+            />
           </ImageCon>
           <ProductInfoCon>
             <ProductInfoTextCon>

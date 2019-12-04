@@ -28,6 +28,7 @@
     "react-google-maps": "^9.4.5",
     "react-icons": "^3.8.0",
     "react-id-swiper": "^2.4.0",
+    "react-image-gallery": "^0.9.1",
     "react-images": "^1.0.0",
     "react-photo-gallery": "^8.0.0",
     "styled-components": "^4.4.1",
