@@ -6,7 +6,7 @@ import HBBSymbolText from "../components/atoms/hbb-symbol-title/hbb-symbol-title
 import { Link } from "gatsby"
 import BarIcon from "../components/atoms/icons/bar_icon/bar-icon"
 import BoutiqueIcon from "../components/atoms/icons/boutique_Icon/boutique-icon"
-import Logo from "../../static/logo_wide.svg"
+import Logo from "../../static/icons/Logo-rectangle.svg"
 import styled from "styled-components"
 
 const IndexPage = () => {
@@ -82,7 +82,12 @@ const IndexPage = () => {
   const LogoContainer = styled.div`
     width: 100%;
     margin: 30px auto;
-    opacity: 0.5;
+    display: flex;
+    justify-content: center;
+
+    img {
+      width: 100px;
+    }
   `
 
   return (

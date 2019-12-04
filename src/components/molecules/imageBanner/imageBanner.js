@@ -58,9 +58,17 @@ font-size: 0.9rem;
 }
 `
 
+const Overlay = styled.div`
+width: 100%;
+height: 100%;
+background: rgba(0, 0, 0, 0.45);
+position: absolute;
+`
+
 const ImageBanner = props => {
     return (
         <Wrapper>
+            <Overlay />
             <Text>{props.text}</Text>
             <Banner src={props.img} />
         </Wrapper>

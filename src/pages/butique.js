@@ -112,7 +112,7 @@ const ButiqueMainPage = ({ data }) => {
           <SplashImage img={Heroimage} />
           <TitleCTA title="The essential collection" cta="Shop Now" />
           <ProductTilesGrid products={products}/>
-          <ImageBanner img={"https://p2d7x8x2.stackpathcdn.com/wordpress/wp-content/uploads/2017/01/old-fashioned-1024x684.jpg"} text="Some Promotion image and title for bar &amp; café fx. Social shopping drink menu" />
+          <ImageBanner img={"https://p2d7x8x2.stackpathcdn.com/wordpress/wp-content/uploads/2017/01/old-fashioned-1024x684.jpg"} text="Combining the best of two worlds, a clothing store and a cocktailbar &amp; café" />
           <CategoryTilesGrid collections={collections} title="SHOP BY CATEGORY"/>
           <SaleSection>
           <ProductTilesSection products={products} title="Sale Sale Sale" cta="See all" />

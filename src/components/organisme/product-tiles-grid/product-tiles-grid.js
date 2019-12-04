@@ -4,9 +4,46 @@ import styled from "styled-components"
 import ProductTile from "../../molecules/product-tile/product-tile"
 import Swiper from "react-id-swiper"
 import "swiper/css/swiper.css"
+import { colors } from "../../../styles/global-js/colors"
 
 const Wrapper = styled.div`
   width: 100%;
+
+  .customized-swiper-button-left {
+    background: white;
+    border-radius: 100%;
+    width: 35px;
+    height: 35px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    &:after {
+      content: "";
+      display: block;
+      width: 10px;
+      height: 10px;
+      border-bottom: 2px solid ${colors.gold};
+      border-right: 2px solid ${colors.gold};
+      transform: rotate(135deg);
+    }
+  }
+
+    .customized-swiper-button-right {
+    background: white;
+    border-radius: 100%;
+    width: 35px;
+    height: 35px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    &:after {
+      content: "";
+      display: block;
+      width: 10px;
+      height: 10px;
+      border-bottom: 2px solid ${colors.gold};
+      border-right: 2px solid ${colors.gold};
+      transform: rotate(315deg);
+    }
+  }
 `
 const ContainerMobile = styled.div`
   display: flex;
@@ -56,8 +93,11 @@ const ProductTilesGrid = props => {
   const paramsDesktop = {
     slidesPerView: 4,
     spaceBetween: 0,
+    navigation: {
+      nextEl: ".swiper-button-next.customized-swiper-button-right",
+      prevEl: ".swiper-button-prev.customized-swiper-button-left",
+    },
   }
-
   return (
     <Wrapper>
       <ContainerMobile>
