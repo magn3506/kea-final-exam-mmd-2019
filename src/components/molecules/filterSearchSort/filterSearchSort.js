@@ -5,7 +5,7 @@ import { colors } from "../../../styles/global-js/colors"
 const filterSearchSort = props => {
   const FilterSearchSortContainer = styled.div`
     max-width: 1024px;
-    margin: 0 auto;
+    margin: 0 auto 50px auto;
     padding: 10px;
     display: flex;
     flex-wrap: wrap;

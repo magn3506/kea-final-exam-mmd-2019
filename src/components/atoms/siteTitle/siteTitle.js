@@ -3,16 +3,24 @@ import styled from "styled-components"
 import { colors } from "../../../styles/global-js/colors"
 import DiamondIcon from "../../../../static/icons/diamond.svg"
 import { Link } from "gatsby"
+import { device } from "../../../styles/global-js/breakpoints"
 // import YearIcon from "../../../../static/icons/year.svg"
 
 const siteTitle = props => {
   const SiteTtileWrapper = styled(Link)`
     height: 100%;
+    margin: 0 auto;
     cursor: pointer;
     display: flex;
+    align-self: center;
+
     &:hover {
       cursor: pointer;
       opacity: 0.8;
+    }
+
+    @media ${device.laptop} {
+      transform: translateX(-50px);
     }
   `
 

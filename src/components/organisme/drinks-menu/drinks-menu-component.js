@@ -94,7 +94,7 @@ const DrinkMenuComponent = () => {
   const Wrapper = styled.div`
     max-width: 1024px;
     margin: 0 auto;
-    background-color: ${colors.grey};
+    background-color: white;
     border: 10px solid #2e2b28;
   `
 
