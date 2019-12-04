@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import styled from "styled-components"
 
 import Layout from "../components/layout/layout"
@@ -125,18 +125,6 @@ const ImageCon = styled.div`
     align-items: center;
     background: ${colors.darkGrade};
     flex-direction: row;
-  }
-`
-
-const ShownImage = styled.img`
-  @media ${device.tablet} {
-    width: 350px;
-    height: 350px;
-  }
-
-  @media ${device.laptop} {
-    width: 400px;
-    height: 400px;
   }
 `
 
