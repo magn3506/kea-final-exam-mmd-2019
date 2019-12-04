@@ -15,7 +15,7 @@ const Wrapper = styled.div`
   &:hover {
     opacity: 1;
     box-shadow: ${colors.NavBoxShadow};
-    border: 5px solid ${colors.red};
+    border: 5px solid ${colors.gold};
     border-radius: 10px;
     overflow: hidden;
   }
