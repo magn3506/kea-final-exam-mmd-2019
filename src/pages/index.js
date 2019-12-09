@@ -4,10 +4,12 @@ import { device } from "../styles/global-js/breakpoints"
 import { GlobalStyle } from "../styles/global-js/globalstyles"
 import HBBSymbolText from "../components/atoms/hbb-symbol-title/hbb-symbol-title"
 import { Link } from "gatsby"
-import BarIcon from "../components/atoms/icons/bar_icon/bar-icon"
-import BoutiqueIcon from "../components/atoms/icons/boutique_Icon/boutique-icon"
 import Logo from "../../static/icons/Logo-rectangle.svg"
 import styled from "styled-components"
+
+import BarIcon from "../../static/Bar-logo.png"
+import BoutiqueIcon from "../../static/Boutique-logo.png"
+import UnderlineIcon from "../../static/icons/Underlinetest.png"
 
 const IndexPage = () => {
   const Wrapper = styled.div`
@@ -42,18 +44,32 @@ const IndexPage = () => {
   `
   const LinkContainer = styled.div`
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
   `
   const LinkBoutique = styled(Link)`
     background: ${colors.greenGrade};
     cursor: pointer;
     padding: 10px 0px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3px;
+
+    @media ${device.tablet} {
+      height: 200px;
+  }
+
+  @media ${device.laptop} {
+    height: 200px;
+  }
+
     &:hover {
       background: transparent;
       border: 1px solid ${colors.gold};
     }
     div {
-      width: 40%;
+      width: 60%;
       margin: 0 auto;
       svg {
         width: 100%;
@@ -64,13 +80,27 @@ const IndexPage = () => {
     background: ${colors.redGrade};
     cursor: pointer;
     padding: 10px 0px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3px;
+
+    @media ${device.tablet} {
+      height: 200px;
+  }
+
+  @media ${device.laptop} {
+    height: 200px;
+  }
+
     &:hover {
       background: transparent;
       border: 1px solid ${colors.gold};
     }
 
     div {
-      width: 40%;
+      width: 60%;
       margin: 0 auto;
 
       svg {
@@ -90,6 +120,38 @@ const IndexPage = () => {
     }
   `
 
+const LinkItemCon = styled.div`
+width: 100%;
+display: flex;
+flex-direction: column;
+align-items: center;
+`
+
+  const FrameCon = styled.div`
+    border: 7px solid ${colors.gold};
+    margin: 3px;
+  `
+  const OuterFrameCon = styled.div`
+    border: 3px solid ${colors.gold};
+    margin: 5px;
+  `
+
+  const Img = styled.img`
+    width: 100%;
+  `
+
+  const TextLink = styled.p`
+  color: ${colors.gold};
+  font-size: 0.8rem;
+  text-align: center;
+  font-weight: 700;
+  `
+
+  const Underline = styled.img`
+  width: 80%;
+  margin-top: 0;
+  `
+
   return (
     <>
       <GlobalStyle></GlobalStyle>
@@ -100,16 +162,32 @@ const IndexPage = () => {
           </TitleSVGContainer>
           <Text>Choose which place you want to experience</Text>
           <LinkContainer>
-            <LinkBoutique to="/butique">
-              <div>
-                <BoutiqueIcon />
-              </div>
-            </LinkBoutique>
-            <LinkBar to="/bar">
-              <div>
-                <BarIcon />
-              </div>
-            </LinkBar>
+          <LinkItemCon>
+          <OuterFrameCon>
+              <FrameCon>
+                <LinkBoutique to="/butique">
+                  <div>
+                    <Img src={BoutiqueIcon} />
+                  </div>
+                </LinkBoutique>
+              </FrameCon>
+            </OuterFrameCon>
+            <TextLink>See the Boutique</TextLink>
+            <Underline src={UnderlineIcon} />
+          </LinkItemCon>
+          <LinkItemCon>
+          <OuterFrameCon>
+              <FrameCon>
+                <LinkBar to="/bar">
+                  <div>
+                    <Img src={BarIcon} />
+                  </div>
+                </LinkBar>
+              </FrameCon>
+            </OuterFrameCon>
+            <TextLink>See the Bar &amp; Café</TextLink>
+            <Underline src={UnderlineIcon} />
+          </LinkItemCon>
           </LinkContainer>
           <LogoContainer>
             <img src={Logo} alt="LOGO" />
