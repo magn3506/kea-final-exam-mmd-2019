@@ -4,7 +4,9 @@ import BarHeroShape from "../../atoms/shapes/barHeroShape/barHeroShape"
 import HBBSymbolTitleSVG from "../../atoms/hbb-symbol-title/hbb-symbol-title"
 import LeavesSVG from "../../atoms/icons/leaves/leavesSVG"
 const BarHero = props => {
-  const BarHeroWrapper = styled.div``
+  const BarHeroWrapper = styled.div`
+      position: relative;
+  `
 
   const BarHeroShapeCon = styled.div`
     width: 100%;

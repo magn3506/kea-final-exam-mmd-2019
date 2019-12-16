@@ -1,87 +1,245 @@
-import styled from "styled-components"
+import styled, {keyframes} from "styled-components"
 import React from "react"
 import { device } from "../../../styles/global-js/breakpoints"
 import { colors } from "../../../styles/global-js/colors"
-import UnderlineSVG from "../../atoms/icons/underline/underlineSVG"
-import ButtonBar from "../../atoms/button-bar/button-bar"
-import YearSVG from "../../atoms/icons/year/year"
+import FrontImage from "../../../../static/front-bar-image.jpg"
+import FrontImageMobile from "../../../../static/front-bar-image-mobile.jpg"
+import DrinksImg from "../../../../static/drinks.jpg"
+import EventsImg from "../../../../static/events.jpg"
+import BourbonImg from "../../../../static/bourbontasting.jpg"
+
+import { Link } from "gatsby"
 
 const barCafeSection = () => {
+
+  const WordAnimation = keyframes`
+  0% {
+    transform: translateY(200px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  `
+  
   const TitleCon = styled.div`
-    margin-top: -40px;
+    margin-bottom: 15px;
   `
 
   const BarTitle = styled.h1`
     color: ${colors.gold};
+    font-size: 1.2rem;
+    font-weight: 600;
 
-    max-width: 300px;
+    width: 100%;
     margin: 0 auto;
-    text-align: center;
     text-transform: uppercase;
-  `
 
-  const UnderlingSVGCon = styled.div`
-    width: 250px;
-    margin: 10px auto;
-    svg {
-      width: 100%;
+    @media only screen and (max-width: 320px) {
+      font-size: 1rem;
+      padding: 5px;
     }
   `
+  const Wrapper = styled.div`
+    display: flex;
+    justify-content: center;
+    margin-top: -100px;
+  `
+
+  const Container = styled.div`
+    max-width: 1024px;
+    background: black;
+  `
+
   const IntroText = styled.p`
-    max-width: 600px;
-    padding: 40px;
     margin: 0 auto;
-    color: ${colors.grey};
-
-    @media ${device.tablet} {
-      max-width: 700px;
-    }
-    @media ${device.laptop} {
-      max-width: 800px;
+    font-size: 0.9rem;
+    line-height: normal;
+    color: #a9a9a9;
+    letter-spacing: 0.3px;
+    
+    @media only screen and (max-width: 320px) {
+      padding: 5px;
     }
   `
 
-  const YearSVGCon = styled.div`
-    width: 250px;
-    margin: 70px auto;
+  const IntroductionCon = styled.div`
+    display: flex;
+    flex-direction: column;
 
     @media ${device.tablet} {
-      width: 300px;
-    }
-    @media ${device.laptop} {
-      width: 350px;
+      flex-direction: row;
     }
 
-    svg {
-      width: 100%;
+    @media ${device.laptop} {
+      flex-direction: row;
+    }
+  `
+
+  const TextCon = styled.div`
+    padding: 100px 25px 25px 25px;
+
+    @media only screen and (max-width: 320px) {
+      padding: 100px 0 0 0;
+    }
+  `
+
+  const LinksCon = styled.div`
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+    justify-content: center;
+
+    opacity: 0;
+    animation: ${WordAnimation} 0.5s ease-out .5s forwards;
+
+    @media ${device.tablet} {
+      justify-content: initial;
+    }
+
+    @media ${device.laptop} {
+      justify-content: initial;
+    }
+  `
+
+  const ImageCon = styled.div`
+    width: 100%;
+    background: black;
+    display: flex;
+    justify-content: flex-end;
+  `
+
+  const ImageDesktop = styled.img`
+  display: none;
+
+    @media ${device.tablet} {
+      width: 250px;
+      display: block;
+    }
+
+    @media ${device.laptop} {
+      width: 500px;
+      display: block;
+    }
+  `
+
+const ImageMobile = styled.img`
+width: 100%;
+
+@media ${device.tablet} {
+  display: none;
+}
+
+@media ${device.laptop} {
+  display: none;
+}
+`
+
+  const LinkCon = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 10px;
+    position: relative;
+
+    @media ${device.tablet} {
+      margin-right: 25px;
+    }
+
+    @media ${device.laptop} {
+      margin-right: 25px;
+    }
+  `
+
+  const LinkImage = styled.img`
+    width: 100px;
+    border: 3px solid ${colors.gold};
+    border-radius: 2px;
+    margin-bottom: 15px;
+
+    @media only screen and (max-width: 320px) {
+      width: 85px;
+    }
+
+    @media ${device.tablet} {
+      width: 125px;
+    }
+
+    @media ${device.laptop} {
+      width: 125px;
+    }
+  `
+
+  const ButtonBar = styled(Link)`
+    width: 100px;
+    font-size: 0.5rem;
+    width: 75px;
+    color: ${colors.gold};
+    border: 3px solid ${colors.gold};
+    font-weight: 600;
+    text-align: center;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    border-radius: 1000px;
+    background: black;
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+
+    @media ${device.tablet} {
+      width: 100px;
+      font-size: 0.7rem;
+    }
+
+    @media ${device.laptop} {
+      width: 100px;
+      font-size: 0.7rem;
+    }
+
+    &:hover {
+      transform: scale(0.97);
+      transition: 0.1s ease-in-out;
+      box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
     }
   `
 
   return (
-    <div>
-      <TitleCon>
-        <BarTitle>Bar & Café</BarTitle>
-        <UnderlingSVGCon>
-          <UnderlineSVG></UnderlineSVG>
-        </UnderlingSVGCon>
-      </TitleCon>
-      <IntroText>
-        The best taco bowls are made in Trump Tower Grill. I love Hispanics!
-        This placeholder text is gonna be HUGE. You could see there was text
-        coming out of her eyes, text coming out of her wherever. You’re
-        disgusting. Be careful, or I will spill the beans on your placeholder
-        text. I'm speaking with myself, number one, because I have a very good
-        brain and I've said a lot of things. Lorem Ipsum better hope that there
-        are no "tapes" of our conversations before he starts leaking to the
-        press! I think the only card she has is the Lorem card. Lorem Ipsum's
-        father was with Lee Harvey Oswald prior to Oswald's being, you know,
-        shot. nice."
-        <ButtonBar linkTo="/drinks-menu">Drinks Menu</ButtonBar>
-      </IntroText>
-      <YearSVGCon>
-        <YearSVG></YearSVG>
-      </YearSVGCon>
-    </div>
+    <Wrapper>
+      <Container>
+        <IntroductionCon>
+          <TextCon>
+            <TitleCon>
+              <BarTitle>The Clothing store ... with a bar!</BarTitle>
+            </TitleCon>
+            <IntroText>
+              At Hats, Boots &amp; Bourbon you can get a drink, beer or a
+              coffee, browse around, ask us about the products, try them on,
+              think on it, have another drink, try it on again. Maybe you walk
+              out with a new hat, or just a nice experience.
+            </IntroText>
+            <LinksCon>
+              <LinkCon>
+                <LinkImage src={DrinksImg} />
+                <ButtonBar to="/drinks-menu">Drinks Menu</ButtonBar>
+              </LinkCon>
+              <LinkCon>
+                <LinkImage src={EventsImg} />
+                <ButtonBar to="/events">Events</ButtonBar>
+              </LinkCon>
+              <LinkCon>
+                <LinkImage src={BourbonImg} />
+                <ButtonBar to="/bourbon-tasting">Bourbon tasting</ButtonBar>
+              </LinkCon>
+            </LinksCon>
+          </TextCon>
+          <ImageCon>
+            <ImageDesktop src={FrontImage} />
+            <ImageMobile src={FrontImageMobile} />
+          </ImageCon>
+        </IntroductionCon>
+      </Container>
+    </Wrapper>
   )
 }
 
