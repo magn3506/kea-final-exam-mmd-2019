@@ -6,57 +6,159 @@ export default {
   title: "Components|Organisme/product-tiles-section",
 }
 
+const products = {
+  edges: [
+    {
+      node: {
+        title: "Winters Fedora Hat, Almond - Baileys",
+        price: "1.299,00",
+        img: [
+          {
+            resize: {
+              src:
+                "//images.ctfassets.net/yyhkqa4jdoli/59DY9tB1bS1wsP0GV0T47g/70e80032d4319dc1f51dd8ede921aa71/size-s-.jpg?w=300&h=300&fl=progressive&q=50&fit=fill",
+            },
+          },
+        ],
+        id: "85092e4b-60e2-57f5-be8d-79eadb2f14b86",
+        slug: "winters-fedora-hat",
+      },
+    },
+    {
+      node: {
+        title: "Winters Fedora Hat, Almond - Baileys",
+        price: "1.299,00",
+        img: [
+          {
+            resize: {
+              src:
+                "//images.ctfassets.net/yyhkqa4jdoli/59DY9tB1bS1wsP0GV0T47g/70e80032d4319dc1f51dd8ede921aa71/size-s-.jpg?w=300&h=300&fl=progressive&q=50&fit=fill",
+            },
+          },
+        ],
+        id: "85092e4b-60e2-57f5-be8d-79eadb2f14b85",
+        slug: "winters-fedora-hat",
+      },
+    },
+    {
+      node: {
+        title: "Winters Fedora Hat, Almond - Baileys",
+        price: "1.299,00",
+        img: [
+          {
+            resize: {
+              src:
+                "//images.ctfassets.net/yyhkqa4jdoli/59DY9tB1bS1wsP0GV0T47g/70e80032d4319dc1f51dd8ede921aa71/size-s-.jpg?w=300&h=300&fl=progressive&q=50&fit=fill",
+            },
+          },
+        ],
+        id: "85092e4b-60e2-57f5-be8d-79eadb2f14b84",
+        slug: "winters-fedora-hat",
+      },
+    },
+    {
+      node: {
+        title: "Winters Fedora Hat, Almond - Baileys",
+        price: "1.299,00",
+        img: [
+          {
+            resize: {
+              src:
+                "//images.ctfassets.net/yyhkqa4jdoli/59DY9tB1bS1wsP0GV0T47g/70e80032d4319dc1f51dd8ede921aa71/size-s-.jpg?w=300&h=300&fl=progressive&q=50&fit=fill",
+            },
+          },
+        ],
+        id: "85092e4b-60e2-57f5-be8d-79eadb2f14b83",
+        slug: "winters-fedora-hat",
+      },
+    },
+    {
+      node: {
+        title: "Winters Fedora Hat, Almond - Baileys",
+        price: "1.299,00",
+        img: [
+          {
+            resize: {
+              src:
+                "//images.ctfassets.net/yyhkqa4jdoli/59DY9tB1bS1wsP0GV0T47g/70e80032d4319dc1f51dd8ede921aa71/size-s-.jpg?w=300&h=300&fl=progressive&q=50&fit=fill",
+            },
+          },
+        ],
+        id: "85092e4b-60e2-57f5-be8d-79eadb2f14b81",
+        slug: "winters-fedora-hat",
+      },
+    },
+    {
+      node: {
+        title: "Winters Fedora Hat, Almond - Baileys",
+        price: "1.299,00",
+        img: [
+          {
+            resize: {
+              src:
+                "//images.ctfassets.net/yyhkqa4jdoli/59DY9tB1bS1wsP0GV0T47g/70e80032d4319dc1f51dd8ede921aa71/size-s-.jpg?w=300&h=300&fl=progressive&q=50&fit=fill",
+            },
+          },
+        ],
+        id: "85092e4b-60e2-57f5-be8d-79eadb2f14b82",
+        slug: "winters-fedora-hat",
+      },
+    },
+    {
+      node: {
+        title: "Winters Fedora Hat, Almond - Baileys",
+        price: "1.299,00",
+        img: [
+          {
+            resize: {
+              src:
+                "//images.ctfassets.net/yyhkqa4jdoli/59DY9tB1bS1wsP0GV0T47g/70e80032d4319dc1f51dd8ede921aa71/size-s-.jpg?w=300&h=300&fl=progressive&q=50&fit=fill",
+            },
+          },
+        ],
+        id: "85092e4b-60e2-57f5-be8d-79eadb2f14b82",
+        slug: "winters-fedora-hat",
+      },
+    },
+    {
+      node: {
+        title: "Winters Fedora Hat, Almond - Baileys",
+        price: "1.299,00",
+        img: [
+          {
+            resize: {
+              src:
+                "//images.ctfassets.net/yyhkqa4jdoli/59DY9tB1bS1wsP0GV0T47g/70e80032d4319dc1f51dd8ede921aa71/size-s-.jpg?w=300&h=300&fl=progressive&q=50&fit=fill",
+            },
+          },
+        ],
+        id: "85092e4b-60e2-57f5-be8d-79eadb2f14b82",
+        slug: "winters-fedora-hat",
+      },
+    },
+    {
+      node: {
+        title: "Winters Fedora Hat, Almond - Baileys",
+        price: "1.299,00",
+        img: [
+          {
+            resize: {
+              src:
+                "//images.ctfassets.net/yyhkqa4jdoli/59DY9tB1bS1wsP0GV0T47g/70e80032d4319dc1f51dd8ede921aa71/size-s-.jpg?w=300&h=300&fl=progressive&q=50&fit=fill",
+            },
+          },
+        ],
+        id: "85092e4b-60e2-57f5-be8d-79eadb2f14b82",
+        slug: "winters-fedora-hat",
+      },
+    },
+  ],
+}
 
-const products = [
-    {
-      title: "Fedora Furfelt - Stetson",
-      price: "1.099,00 kr",
-      img: "https://dummyimage.com/600x600/000/fff.jpg",
-      id: 1,
-    },
-    {
-      title: "Fedora Furfelt - Stetson",
-      price: "1.099,00 kr",
-      img: "https://dummyimage.com/600x600/000/fff.jpg",
-      id: 2,
-    },
-    {
-      title: "Fedora Furfelt - Stetson",
-      price: "1.099,00 kr",
-      img: "https://dummyimage.com/600x600/000/fff.jpg",
-      id: 3,
-    },
-    {
-      title: "Fedora Furfelt - Stetson",
-      price: "1.099,00 kr",
-      img: "https://dummyimage.com/600x600/000/fff.jpg",
-      id: 4,
-    },
-    {
-      title: "Fedora Furfelt - Stetson",
-      price: "1.099,00 kr",
-      img: "https://dummyimage.com/600x600/000/fff.jpg",
-      id: 5,
-    },
-    {
-      title: "Fedora Furfelt - Stetson",
-      price: "1.099,00 kr",
-      img: "https://dummyimage.com/600x600/000/fff.jpg",
-      id: 6,
-    },
-    {
-      title: "Fedora Furfelt - Stetson",
-      price: "1.099,00 kr",
-      img: "https://dummyimage.com/600x600/000/fff.jpg",
-      id: 7,
-    },
-    {
-      title: "Fedora Furfelt - Stetson",
-      price: "1.099,00 kr",
-      img: "https://dummyimage.com/600x600/000/fff.jpg",
-      id: 8,
-    },
-  ]
-
-
-  export const productTilesSection = () => <ProductTilesSection products={products} title="Sale Sale Sale" cta="See all" />
+export const productTilesSection = () => (
+  <ProductTilesSection
+    products={products.edges}
+    title="Sale Sale Sale"
+    cta="See all"
+  />
+)
