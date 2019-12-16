@@ -8,9 +8,12 @@ const Wrapper = styled.div`
   width: 135px;
   margin-left: 5px;
   margin-right: 5px;
-  background: white;
+  background: ${colors.grey};
   margin-bottom: 30px;
   transition: 0.2s;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  overflow: hidden;
 
   &:hover {
     opacity: 1;
@@ -34,10 +37,11 @@ const Wrapper = styled.div`
 `
 
 const InfoBox = styled.div`
-  background: white;
+  /* background: white; */
   padding: 5px 5px 5px 3px;
   position: relative;
   height: 100px;
+  max-width: 200px;
 
   @media ${device.tablet} {
     padding: 10px 10px 10px 10px;
@@ -92,7 +96,7 @@ const ProductTile = props => {
         <ImgBox src={props.img} />
         <InfoBox>
           <ProductTitle>{props.title}</ProductTitle>
-          <ProductPrice>{props.price}</ProductPrice>
+          <ProductPrice>{props.price} kr.</ProductPrice>
         </InfoBox>
       </Link>
     </Wrapper>
