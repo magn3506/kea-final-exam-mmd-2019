@@ -10,11 +10,18 @@ const Wrapper = styled.div`
   width: 100%;
 
   .customized-swiper-button-left {
-    background: white;
-    border-radius: 100%;
+    background: ${colors.greenGrade};
+    border-radius: 5px;
     width: 35px;
-    height: 35px;
+    height: 70px;
+    opacity: 0.9;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    transform: translateX(-7px);
+
+    &:hover {
+      opacity: 1;
+      transition: 0.2s;
+    }
 
     &:after {
       content: "";
@@ -27,12 +34,18 @@ const Wrapper = styled.div`
     }
   }
 
-    .customized-swiper-button-right {
-    background: white;
-    border-radius: 100%;
+  .customized-swiper-button-right {
+    background: ${colors.greenGrade};
+    border-radius: 5px;
     width: 35px;
-    height: 35px;
+    height: 70px;
+    opacity: 0.9;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    &:hover {
+      opacity: 1;
+      transition: 0.2s;
+    }
 
     &:after {
       content: "";
@@ -59,7 +72,7 @@ const ContainerMobile = styled.div`
 const ContainerTablet = styled.div`
   display: none;
 
-  @media (min-width: 768px) {
+  @media (min-width: 600px) {
     display: flex;
     flex-direction: row;
   }
@@ -91,7 +104,7 @@ const ProductTilesGrid = props => {
   }
 
   const paramsDesktop = {
-    slidesPerView: 4,
+    slidesPerView: 4.2,
     spaceBetween: 0,
     navigation: {
       nextEl: ".swiper-button-next.customized-swiper-button-right",

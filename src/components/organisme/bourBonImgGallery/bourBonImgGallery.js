@@ -8,7 +8,7 @@ import Carousel, { Modal, ModalGateway } from "react-images"
 const ImageGallery = () => {
   const data = useStaticQuery(graphql`
     query {
-      allInstagramContent(limit: 12) {
+      allInstagramContent(limit: 4) {
         edges {
           node {
             images {
@@ -52,13 +52,14 @@ const ImageGallery = () => {
 
   const GalleryWrapper = styled.div`
     max-width: 1024px;
-    margin: 100px auto;
+    margin: 0 auto;
+    background: ${colors.redGrade};
+    padding: 25px;
   `
-  const Title = styled.h1`
+  const Title = styled.h3`
+    text-align: left;
+    padding: 0px;
     color: ${colors.gold};
-    text-align: center;
-    width: 100%;
-    margin-bottom: 100px;
   `
 
   return (

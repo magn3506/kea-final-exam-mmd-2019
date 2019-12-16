@@ -3,6 +3,10 @@ import styled from "styled-components"
 import { colors } from "../../../styles/global-js/colors"
 
 const filterSearchSort = props => {
+  const handleClickErrorMSG = () => {
+    alert("This feature is not yet implementet")
+  }
+
   const FilterSearchSortContainer = styled.div`
     max-width: 1024px;
     margin: 0 auto 50px auto;
@@ -127,7 +131,7 @@ const filterSearchSort = props => {
   return (
     <>
       <FilterSearchSortContainer>
-        <SearchCon>
+        <SearchCon onClick={handleClickErrorMSG}>
           <Search type="text" placeholder="Search.."></Search>
         </SearchCon>
         <FilterSortContainer>

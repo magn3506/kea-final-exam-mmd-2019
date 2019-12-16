@@ -5,11 +5,11 @@ import { colors } from "../../../styles/global-js/colors"
 import { device } from "../../../styles/global-js/breakpoints"
 
 const Wrapper = styled.div`
-margin: 10px;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `
 const SizeInputfield = styled.select`
   width: 100%;
@@ -27,31 +27,30 @@ const SizeInputfield = styled.select`
     background: white;
     border-radius: 3px;
   }
-
 `
 
 const PaymentOptionsBox = styled.div`
-width: 100%;
-display: flex;
-flex-direction: row;
-justify-content: space-between;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 `
 const BuyNow = styled.button`
-width: 175px;
-height: 35px;
-cursor: pointer;
-transition: .3s;
+  width: 175px;
+  height: 35px;
+  cursor: pointer;
+  transition: 0.3s;
 
-background: ${colors.green};
-border-radius: 3px;
-border: none;
-color: white;
-font-weight: 600;
-&:hover {
-  opacity: .8;
-}
+  background: ${colors.green};
+  border-radius: 3px;
+  border: none;
+  color: white;
+  font-weight: 600;
+  &:hover {
+    opacity: 0.8;
+  }
 
-@media ${device.tablet} {
+  @media ${device.tablet} {
     width: 150px;
   }
 
@@ -60,21 +59,21 @@ font-weight: 600;
   }
 `
 const AddCart = styled.button`
-width: 175px;
-height: 35px;
-cursor: pointer;
-transition: .3s;
+  width: 175px;
+  height: 35px;
+  cursor: pointer;
+  transition: 0.3s;
 
-background: ${colors.gold};
-border-radius: 3px;
-border: none;
-color: white;
-font-weight: 600;
-&:hover {
-  opacity: .8;
-}
+  background: ${colors.gold};
+  border-radius: 3px;
+  border: none;
+  color: white;
+  font-weight: 600;
+  &:hover {
+    opacity: 0.8;
+  }
 
-@media ${device.tablet} {
+  @media ${device.tablet} {
     width: 150px;
   }
 
@@ -84,6 +83,10 @@ font-weight: 600;
 `
 
 const PaymentFields = () => {
+  const handleClickErrorMSG = () => {
+    alert("This feature is not yet implementet")
+  }
+
   return (
     <Wrapper>
       <SizeInputfield>
@@ -96,8 +99,8 @@ const PaymentFields = () => {
         <option value="4">XL</option>
       </SizeInputfield>
       <PaymentOptionsBox>
-    <AddCart>Add to cart</AddCart>
-    <BuyNow>Buy now</BuyNow>
+        <AddCart onClick={handleClickErrorMSG}>Add to cart</AddCart>
+        <BuyNow onClick={handleClickErrorMSG}>Buy now</BuyNow>
       </PaymentOptionsBox>
     </Wrapper>
   )

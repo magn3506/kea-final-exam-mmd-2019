@@ -29,6 +29,7 @@ export const query = graphql`
     }
   }
 `
+
 const MainContent = styled.div`
   max-width: 1024px;
   margin: 0 auto;
