@@ -63,7 +63,7 @@ const ImageGallery = () => {
 
   return (
     <GalleryWrapper>
-      <Title>Gallery</Title>
+      <Title>Follow us on Instagram</Title>
       <Gallery photos={photos} onClick={openLightbox} />
       <ModalGateway>
         {viewerIsOpen ? (
