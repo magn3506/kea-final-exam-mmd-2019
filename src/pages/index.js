@@ -82,10 +82,6 @@ const IndexPage = () => {
       width: 200px;
     }
 
-    &:hover {
-      background: black;
-      border: 1px solid ${colors.gold};
-    }
     div {
       width: 60%;
       margin: 0 auto;
@@ -103,7 +99,6 @@ const IndexPage = () => {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: 0.3s;
 
     @media only screen and (max-width: 320px) {
       width: 135px;
@@ -119,10 +114,6 @@ const IndexPage = () => {
       width: 200px;
     }
 
-    &:hover {
-      background: black;
-      border: 1px solid ${colors.gold};
-    }
 
     div {
       width: 60%;
@@ -148,6 +139,12 @@ const IndexPage = () => {
   const FrameCon = styled.div`
     border: 5px solid ${colors.gold};
     margin-top: 25px;
+    transition: 0.3s;
+
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: -1px 7px 18px 0px rgba(0,0,0,0.75);
+    }
   `
 
   const Img = styled.img`
@@ -178,6 +175,7 @@ const IndexPage = () => {
   const ButtonFrame = styled.div`
     border: 3px solid ${colors.gold};
     position: absolute;
+    z-index: 2;
   `
 
   return (
