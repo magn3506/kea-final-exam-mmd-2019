@@ -2,34 +2,32 @@ import React from "react"
 import { colors } from "../styles/global-js/colors"
 import { device } from "../styles/global-js/breakpoints"
 import { GlobalStyle } from "../styles/global-js/globalstyles"
-import HBBSymbolText from "../components/atoms/hbb-symbol-title/hbb-symbol-title"
 import { Link } from "gatsby"
-import Logo from "../../static/icons/Logo-rectangle.svg"
 import styled from "styled-components"
 
 import BarIcon from "../../static/Bar-logo.png"
 import BoutiqueIcon from "../../static/Boutique-logo.png"
-import UnderlineIcon from "../../static/icons/Underlinetest.png"
+import FrontHero from "../components/molecules/Front-hero/Front-hero"
+import BackrgroundImage from "../../static/front-page-background.jpg"
 
 const IndexPage = () => {
   const Wrapper = styled.div`
-    background: black;
     width: 100vw;
     height: 100vh;
     overflow: scroll;
-    padding: 50px;
+
+    background-image: url(${BackrgroundImage});
+    background-size: cover;
   `
   const Container = styled.div`
-    max-width: 350px;
+    max-width: 600px;
     margin: 0 auto;
-  `
-
-  const TitleSVGContainer = styled.div`
-    width: 100%;
+    padding-bottom: 50px;
+    
   `
   const Text = styled.div`
-    color: ${colors.gold};
-    font-size: 1rem;
+    color: whitesmoke;
+    font-size: 0.9rem;
     text-align: center;
     font-family: "Roboto Slab", serif;
     width: 100%;
@@ -50,22 +48,29 @@ const IndexPage = () => {
     background: ${colors.greenGrade};
     cursor: pointer;
     padding: 10px 0px;
-    height: 150px;
+    height: 200px;
+    width: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 3px;
+    transition: .3s;
+
+    @media only screen and (max-width: 320px) {
+      width: 135px;
+    }
 
     @media ${device.tablet} {
-      height: 200px;
-  }
+      height: 300px;
+      width: 200px;
+    }
 
-  @media ${device.laptop} {
-    height: 200px;
-  }
+    @media ${device.laptop} {
+      height: 300px;
+      width: 200px;
+    }
 
     &:hover {
-      background: transparent;
+      background: black;
       border: 1px solid ${colors.gold};
     }
     div {
@@ -80,22 +85,29 @@ const IndexPage = () => {
     background: ${colors.redGrade};
     cursor: pointer;
     padding: 10px 0px;
-    height: 150px;
+    height: 200px;
+    width: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 3px;
+    transition: .3s;
+
+    @media only screen and (max-width: 320px) {
+      width: 135px;
+    }
 
     @media ${device.tablet} {
-      height: 200px;
-  }
+      height: 300px;
+      width: 200px;
+    }
 
-  @media ${device.laptop} {
-    height: 200px;
-  }
+    @media ${device.laptop} {
+      height: 300px;
+      width: 200px;
+    }
 
     &:hover {
-      background: transparent;
+      background: black;
       border: 1px solid ${colors.gold};
     }
 
@@ -109,61 +121,66 @@ const IndexPage = () => {
     }
   `
 
-  const LogoContainer = styled.div`
+  const LinkItemCon = styled.div`
     width: 100%;
-    margin: 30px auto;
     display: flex;
-    justify-content: center;
-
-    img {
-      width: 100px;
-    }
+    flex-direction: column;
+    align-items: center;
+    position: relative;
   `
-
-const LinkItemCon = styled.div`
-width: 100%;
-display: flex;
-flex-direction: column;
-align-items: center;
-`
 
   const FrameCon = styled.div`
-    border: 7px solid ${colors.gold};
-    margin: 3px;
-  `
-  const OuterFrameCon = styled.div`
-    border: 3px solid ${colors.gold};
-    margin: 5px;
+    border: 5px solid ${colors.gold};
+    margin-top: 25px;
   `
 
   const Img = styled.img`
     width: 100%;
   `
 
-  const TextLink = styled.p`
-  color: ${colors.gold};
-  font-size: 0.8rem;
-  text-align: center;
-  font-weight: 700;
+
+  const CTAButton = styled.button`
+    width: 102px;
+    height: 38px;
+    margin: 3px;
+
+    background: #8a6551;
+    border: 2px solid #8a6551;
+    color: white;
+    cursor: pointer;
+    transition: .3s;
+
+    &:hover {
+      opacity: .8;
+    }
+
+    
+    @media only screen and (max-width: 320px) {
+      width: 90px;
+      font-size: 0.7rem;
+    }
   `
 
-  const Underline = styled.img`
-  width: 80%;
-  margin-top: 0;
-  `
+const ButtonFrame = styled.div`
+border: 3px solid ${colors.gold};
+position: absolute;
+`
 
   return (
     <>
       <GlobalStyle></GlobalStyle>
       <Wrapper>
-        <Container>
-          <TitleSVGContainer>
-            <HBBSymbolText></HBBSymbolText>
-          </TitleSVGContainer>
-          <Text>Choose which place you want to experience</Text>
+        <FrontHero color={colors.dark}></FrontHero>
+
+          <Container>
+          <Text>Do you want to go shopping or have a drink at the bar?</Text>
           <LinkContainer>
-          <LinkItemCon>
-          <OuterFrameCon>
+            <LinkItemCon>
+            <ButtonFrame>
+              <Link to="/butique">
+            <CTAButton>To the Shop</CTAButton>
+            </Link>
+            </ButtonFrame>
               <FrameCon>
                 <LinkBoutique to="/butique">
                   <div>
@@ -171,12 +188,13 @@ align-items: center;
                   </div>
                 </LinkBoutique>
               </FrameCon>
-            </OuterFrameCon>
-            <TextLink>See the Boutique</TextLink>
-            <Underline src={UnderlineIcon} />
-          </LinkItemCon>
-          <LinkItemCon>
-          <OuterFrameCon>
+            </LinkItemCon>
+            <LinkItemCon>
+            <ButtonFrame>
+            <Link to="/bar">
+            <CTAButton>To the Bar</CTAButton>
+            </Link>
+            </ButtonFrame>
               <FrameCon>
                 <LinkBar to="/bar">
                   <div>
@@ -184,14 +202,8 @@ align-items: center;
                   </div>
                 </LinkBar>
               </FrameCon>
-            </OuterFrameCon>
-            <TextLink>See the Bar &amp; Café</TextLink>
-            <Underline src={UnderlineIcon} />
-          </LinkItemCon>
+            </LinkItemCon>
           </LinkContainer>
-          <LogoContainer>
-            <img src={Logo} alt="LOGO" />
-          </LogoContainer>
         </Container>
       </Wrapper>
     </>
