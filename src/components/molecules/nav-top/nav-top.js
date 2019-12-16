@@ -9,6 +9,10 @@ import { device } from "../../../styles/global-js/breakpoints"
 import { Link } from "gatsby"
 
 const navTop = props => {
+  const handleClickErrorMSG = () => {
+    alert("Cart open!: this feature is not yet implementet")
+  }
+
   const TopBar = styled.div`
     height: 35px;
     color: white;
@@ -75,7 +79,7 @@ const navTop = props => {
           titleName={props.siteType ? "Boutique" : "Bar & Cafe"}
           siteType={props.siteType}
         ></SiteTitle>
-        <CartIconCon>
+        <CartIconCon onClick={handleClickErrorMSG}>
           <img src={CartIcon} alt="cart" />
         </CartIconCon>
       </TopBar>
