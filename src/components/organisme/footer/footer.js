@@ -13,12 +13,14 @@ import Hours from "./hours"
 const Wrapper = styled.div`
   width: 100%;
 
-  background: ${colors.darkGrade}
+  background: ${colors.darkGrade};
 `
 const Container = styled.div`
-padding: 10px 20px 10px 20px;
+  padding: 10px 20px 10px 20px;
+  max-width: 1024px;
+  margin: 0 auto;
 
-@media ${device.tablet} {
+  @media ${device.tablet} {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
@@ -28,11 +30,11 @@ padding: 10px 20px 10px 20px;
   }
 `
 const InformationBox = styled.div`
-display: flex;
-flex-direction: row;
-justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 
-@media ${device.tablet} {
+  @media ${device.tablet} {
     width: 100%;
     grid-column-start: 1;
     grid-column-end: 2;
@@ -45,7 +47,7 @@ justify-content: space-between;
   }
 `
 const HourBox = styled.div`
-@media ${device.tablet} {
+  @media ${device.tablet} {
     grid-column-start: 1;
     grid-column-end: 2;
     grid-row-start: 2;
@@ -53,7 +55,7 @@ const HourBox = styled.div`
   }
 `
 const Newsletterbox = styled.div`
-@media ${device.tablet} {
+  @media ${device.tablet} {
     grid-column-start: 2;
     grid-column-end: 3;
     grid-row-start: 2;
@@ -73,17 +75,17 @@ const Footer = props => {
     <Wrapper siteType={props.siteType}>
       <Container>
         <InformationBox>
-        <Information />
-        <Address />
+          <Information />
+          <Address />
         </InformationBox>
         <HourBox>
-            <Hours />
+          <Hours />
         </HourBox>
         <Newsletterbox>
-            <Newsletter />
+          <Newsletter />
         </Newsletterbox>
-        </Container >
-        <Copyright siteType={props.siteType}/>
+      </Container>
+      <Copyright siteType={props.siteType} />
     </Wrapper>
   )
 }

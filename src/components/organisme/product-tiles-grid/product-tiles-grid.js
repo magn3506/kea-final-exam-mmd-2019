@@ -72,7 +72,7 @@ const ContainerMobile = styled.div`
 const ContainerTablet = styled.div`
   display: none;
 
-  @media (min-width: 768px) {
+  @media (min-width: 600px) {
     display: flex;
     flex-direction: row;
   }
