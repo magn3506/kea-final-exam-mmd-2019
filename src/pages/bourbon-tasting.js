@@ -210,7 +210,7 @@ const BourbonTasting = () => {
 
   const ImageBannerWrapper = styled.div`
     max-width: 1024px;
-    margin: 50px auto;
+    margin: 0px auto;
     box-shadow: ${colors.NavBoxShadow};
   `
   const ImageBanner = styled.div`
@@ -219,10 +219,35 @@ const BourbonTasting = () => {
     background-position: 50% 100%;
     background-repeat: no-repeat;
     width: 100%;
-    height: 200px;
+    height: 300px;
+    position: relative;
     @media ${device.tablet} {
       background-position: 100% 100%;
       height: 400px;
+    }
+    ::before  {
+      content: " ";
+      width: 100%;
+      height: 300px;
+      position: absolute;
+      background: ${colors.darkGrade};
+      opacity: 0.6;
+      @media ${device.tablet} {
+        height: 400px;
+      }
+    }
+  `
+  const ImageText = styled.div`
+    color: white;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 25px;
+    margin: 50px auto;
+
+    @media ${device.tablet} {
+      font-size: 50px;
     }
   `
 
@@ -278,7 +303,9 @@ const BourbonTasting = () => {
         </RightCol>
       </Wrapper>
       <ImageBannerWrapper>
-        <ImageBanner></ImageBanner>
+        <ImageBanner>
+          <ImageText>Collect af team of your best mates!</ImageText>
+        </ImageBanner>
       </ImageBannerWrapper>
       <ImageGallery></ImageGallery>
     </Layout>
