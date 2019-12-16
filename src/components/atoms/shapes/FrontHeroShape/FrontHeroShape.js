@@ -12,7 +12,7 @@ const FrontHeroShape = props => {
       <g filter="url(#filter0_d)">
          <path
           d="M314 302.771V0H0V300.372C42.6008 260.309 99.0022 238.203 157.481 238.649C215.959 239.096 272.016 262.061 314 302.771V302.771Z"
-          stroke="#42262D" fill="1A1A1A"
+           fill={props.color}
         />
       </g>
       <defs>

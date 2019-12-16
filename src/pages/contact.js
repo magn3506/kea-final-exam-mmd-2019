@@ -41,6 +41,7 @@ const AboutPage = () => {
     p {
       letter-spacing: 0.3px;
       color: ${colors.grey};
+      font-size: 1rem;
     }
     h1,
     h2,
@@ -48,6 +49,8 @@ const AboutPage = () => {
     h4 {
       width: 100%;
       color: ${colors.gold};
+      font-size: 1.1rem;
+      margin-bottom: 0;
     }
   `
 

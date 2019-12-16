@@ -3,7 +3,7 @@ import { colors } from "../styles/global-js/colors"
 import { device } from "../styles/global-js/breakpoints"
 import { GlobalStyle } from "../styles/global-js/globalstyles"
 import { Link } from "gatsby"
-import styled from "styled-components"
+import styled, { keyframes } from "styled-components"
 
 import BarIcon from "../../static/Bar-logo.png"
 import BoutiqueIcon from "../../static/Boutique-logo.png"
@@ -11,6 +11,17 @@ import FrontHero from "../components/molecules/Front-hero/Front-hero"
 import BackrgroundImage from "../../static/front-page-background.jpg"
 
 const IndexPage = () => {
+  const WordAnimation = keyframes`
+0% {
+  transform: translateY(200px);
+  opacity: 0;
+}
+100% {
+  transform: translateY(0);
+  opacity: 1;
+}
+`
+
   const Wrapper = styled.div`
     width: 100vw;
     height: 100vh;
@@ -23,7 +34,6 @@ const IndexPage = () => {
     max-width: 600px;
     margin: 0 auto;
     padding-bottom: 50px;
-    
   `
   const Text = styled.div`
     color: whitesmoke;
@@ -32,6 +42,9 @@ const IndexPage = () => {
     font-family: "Roboto Slab", serif;
     width: 100%;
     margin: 25px 0px;
+    opacity: 0;
+    animation: ${WordAnimation} 0.5s ease-out 1s forwards;
+
     @media ${device.tablet} {
       font-size: 1.3rem;
       margin: 50px 0px;
@@ -53,7 +66,7 @@ const IndexPage = () => {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: .3s;
+    transition: 0.3s;
 
     @media only screen and (max-width: 320px) {
       width: 135px;
@@ -90,7 +103,7 @@ const IndexPage = () => {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: .3s;
+    transition: 0.3s;
 
     @media only screen and (max-width: 320px) {
       width: 135px;
@@ -127,6 +140,9 @@ const IndexPage = () => {
     flex-direction: column;
     align-items: center;
     position: relative;
+    opacity: 0;
+
+    animation: ${WordAnimation} 0.5s ease-out 1.5s forwards;
   `
 
   const FrameCon = styled.div`
@@ -138,7 +154,6 @@ const IndexPage = () => {
     width: 100%;
   `
 
-
   const CTAButton = styled.button`
     width: 102px;
     height: 38px;
@@ -148,39 +163,38 @@ const IndexPage = () => {
     border: 2px solid #8a6551;
     color: white;
     cursor: pointer;
-    transition: .3s;
+    transition: 0.3s;
 
     &:hover {
-      opacity: .8;
+      opacity: 0.8;
     }
 
-    
     @media only screen and (max-width: 320px) {
       width: 90px;
       font-size: 0.7rem;
     }
   `
 
-const ButtonFrame = styled.div`
-border: 3px solid ${colors.gold};
-position: absolute;
-`
+  const ButtonFrame = styled.div`
+    border: 3px solid ${colors.gold};
+    position: absolute;
+  `
 
   return (
     <>
       <GlobalStyle></GlobalStyle>
       <Wrapper>
-        <FrontHero color={colors.dark}></FrontHero>
+        <FrontHero color="#1A1A1A"></FrontHero>
 
-          <Container>
-          <Text>Do you want to go shopping or have a drink at the bar?</Text>
+        <Container>
+          <Text>Feel free to go shopping or have a drink at the bar!</Text>
           <LinkContainer>
             <LinkItemCon>
-            <ButtonFrame>
-              <Link to="/butique">
-            <CTAButton>To the Shop</CTAButton>
-            </Link>
-            </ButtonFrame>
+              <ButtonFrame>
+                <Link to="/butique">
+                  <CTAButton>To the Shop</CTAButton>
+                </Link>
+              </ButtonFrame>
               <FrameCon>
                 <LinkBoutique to="/butique">
                   <div>
@@ -190,11 +204,11 @@ position: absolute;
               </FrameCon>
             </LinkItemCon>
             <LinkItemCon>
-            <ButtonFrame>
-            <Link to="/bar">
-            <CTAButton>To the Bar</CTAButton>
-            </Link>
-            </ButtonFrame>
+              <ButtonFrame>
+                <Link to="/bar">
+                  <CTAButton>To the Bar</CTAButton>
+                </Link>
+              </ButtonFrame>
               <FrameCon>
                 <LinkBar to="/bar">
                   <div>
