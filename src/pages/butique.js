@@ -117,7 +117,7 @@ const ButiqueMainPage = ({ data }) => {
         <SplashImage img={Heroimage} />
 
         <EssentialsCollectionSection>
-          <TitleCTA title="The essential collection" cta="Shop Now" />
+          <TitleCTA title="The essential collection" cta="See Products" />
           <ProductTilesGrid products={products} />
         </EssentialsCollectionSection>
         <ImageBanner

@@ -10,7 +10,7 @@ const filterSearchSort = props => {
   const FilterSearchSortContainer = styled.div`
     max-width: 1024px;
     margin: 0 auto 50px auto;
-    padding: 10px;
+    padding-bottom: 10px;
     display: flex;
     flex-wrap: wrap;
 
@@ -46,7 +46,7 @@ const filterSearchSort = props => {
     /* border: 1px solid green; */
     width: 100%;
     color: white;
-    margin: 0px 5px;
+    margin: 0px 10px;
   `
   const SortCon = styled.div`
     /* border: 1px solid green; */
@@ -62,14 +62,26 @@ const filterSearchSort = props => {
     background: ${colors.gold};
     padding: 5px 15px;
     font-family: "Roboto Slab", serif;
-    border-radius: 5px 5px 0px 0px;
+    border-radius: 3px;
     text-transform: capitalize;
     height: 40px;
     display: flex;
     align-items: center;
+    position: relative;
     cursor: pointer;
     &:hover {
       opacity: 0.8;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      display: inline-block;
+      transform: rotate(-45deg);
+      padding: 5px;
+      right: 10px;
+
+      box-shadow: 3px -3px 0 0 white inset;
     }
   `
   const DropDown = styled.div`
@@ -85,6 +97,7 @@ const filterSearchSort = props => {
       top: -0px;
       background-color: ${colors.dark};
       li {
+        width: 165px;
         padding: 0;
         padding: 5px 15px;
         display: flex;
@@ -104,18 +117,22 @@ const filterSearchSort = props => {
   // SORT ---------------------------
   const SortTitleCon = styled.div``
   const Title = styled.div`
-    padding-left: 15px;
-    font-size: 12px;
+    font-size: 10px;
+    margin-bottom: 5px;
+    width: 165px;
     text-transform: uppercase;
     letter-spacing: 1px;
     font-weight: 900;
     color: ${colors.grey};
+    position: relative;
+
   `
   const SortText = styled.div`
     background: ${colors.green};
+    width: 165px;
     padding: 5px 15px;
     font-family: "Roboto Slab", serif;
-    border-radius: 5px 5px 0px 0px;
+    border-radius: 3px;
     text-transform: capitalize;
     height: 40px;
     display: flex;
@@ -125,6 +142,17 @@ const filterSearchSort = props => {
     cursor: pointer;
     &:hover {
       opacity: 0.8;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      display: inline-block;
+      transform: rotate(-45deg);
+      padding: 5px;
+      right: 10px;
+
+      box-shadow: 3px -3px 0 0 white inset;
     }
   `
 
@@ -137,7 +165,7 @@ const filterSearchSort = props => {
         <FilterSortContainer>
           <FilterCon>
             <FilterTitleCon>
-              <Title>Filter</Title>
+              <Title>Filter by category</Title>
               <FilterText onClick={props.handleOpenFilter}>
                 {props.filter}
               </FilterText>
@@ -164,8 +192,10 @@ const filterSearchSort = props => {
           </FilterCon>
           <SortCon>
             <SortTitleCon>
-              <Title>Sort</Title>
-              <SortText onClick={props.handleOpenSort}>{props.sort}</SortText>
+              <Title>Sort by price</Title>
+              <SortText onClick={props.handleOpenSort}>
+                {props.sort === "lowToHigh" ? "Low to high" : "High to low"}
+              </SortText>
             </SortTitleCon>
             {props.openSort && (
               <DropDown>

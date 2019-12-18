@@ -304,7 +304,7 @@ const BourbonTasting = () => {
       </Wrapper>
       <ImageBannerWrapper>
         <ImageBanner>
-          <ImageText>Collect af team of your best mates!</ImageText>
+          <ImageText>Come down with your best mates!</ImageText>
         </ImageBanner>
       </ImageBannerWrapper>
       <ImageGallery></ImageGallery>

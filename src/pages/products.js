@@ -119,9 +119,15 @@ class ProductsPage extends Component {
     `
 
     const HeroImage = data.contentfulProductsHeroImage.image.fluid.src
+
+    const ProductPageHeroWrapper = styled.div`
+          position: relative;
+          max-width: 1024px;
+          margin: 0px auto 50px auto;
+    `
+
     const ProductPageHero = styled.div`
       max-width: 1024px;
-      margin: 0px auto 50px auto;
       height: 150px;
       background: black;
       display: flex;
@@ -131,19 +137,18 @@ class ProductsPage extends Component {
       background-position: 0px;
       position: relative;
       background-repeat: no-repeat;
-      z-index: -1;
-      ::after {
-        content: " ";
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        background-color: ${colors.gold};
-        opacity: 0.2;
-        z-index: -1;
-      }
+      z-index: -2;
       @media ${device.laptop} {
-        height: 200px;
+        height: 300px;
       }
+    `
+
+    const Overlay = styled.div`
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.35);
+    position: absolute;
+    z-index: -1;
     `
 
     const Title = styled.h1`
@@ -151,8 +156,7 @@ class ProductsPage extends Component {
       margin: 50px auto;
       text-align: center;
       font-size: 30px;
-      background-color: black;
-      position: relative;
+      position: absolute;
       z-index: 0;
       width: 100%;
       font-weight: 900;
@@ -162,17 +166,21 @@ class ProductsPage extends Component {
       justify-content: center;
       padding: 10px;
       color: ${colors.gold};
+      text-shadow: 2px 2px 7px #000000;
       @media ${device.laptop} {
         font-size: 40px;
-        margin: 75px auto;
+        margin: 100px auto;
       }
     `
 
     return (
       <Layout siteType={true}>
+        <ProductPageHeroWrapper>
+        <Title> Products</Title>
+        <Overlay />
         <ProductPageHero>
-          <Title> Products</Title>
         </ProductPageHero>
+        </ProductPageHeroWrapper>
         <FilterSearchSortContainer
           handleOpenFilter={this.handleOpenFilter}
           handleOpenSort={this.handleOpenSort}
