@@ -32,7 +32,7 @@
     "react-images": "^1.0.0",
     "react-photo-gallery": "^8.0.0",
     "styled-components": "^4.4.1",
-    "swiper": "^5.2.1"
+    "swiper": "^6.5.1"
   },
   "devDependencies": {
     "@babel/core": "^7.7.2",
